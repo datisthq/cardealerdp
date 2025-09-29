@@ -1,0 +1,5 @@
+dangerouslyAllowAllBuilds: true
+packages:
+  - extension
+  - sdk-py
+  - sdk-ts

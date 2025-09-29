@@ -1,0 +1,51 @@
+---
+title: Cardealer DP
+template: splash
+editUrl: false
+lastUpdated: false
+hero:
+  tagline: |
+    Car Dealer Data Package (Cardealer DP) is a data exchange format for car dealerships. It is developed on top of the Data Package standard.
+  image:
+    file: ../../assets/hero.png
+    alt: Cardealer DP Illustration
+  actions:
+    - text: Get Started
+      link: /overview/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/datisthq/cardealerdp
+      icon: external
+      variant: minimal
+---
+
+import { CardGrid, LinkCard, Card } from "@astrojs/starlight/components"
+
+<h2>Features</h2>
+
+<CardGrid>
+  <Card title="Fast" icon="rocket">
+    Data operation is backed by Polars, an extremely fast DataFrame library.
+  </Card>
+  <Card title="Complete" icon="document">
+    The framework supports various data formats and data platform integrations.
+  </Card>
+  <Card title="Standard" icon="open-book">
+    The framework is 100% compatible with the Data Package (v2) standard.
+  </Card>
+  <Card title="Pluggable" icon="puzzle">
+    Easy-to-use plugin system to extend the framework with custom data formats and data platforms.
+  </Card>
+</CardGrid>
+
+<div style="margin-bottom: 5em"></div>
+
+<h2>Documentation</h2>
+
+<CardGrid>
+  <LinkCard title="Introduction" href="/" />
+  <LinkCard title="Command-Line" href="/overview/getting-started" />
+  <LinkCard title="TypeScript" href="https://typescript.dpkit.dev" />
+  <LinkCard title="Data Package" href="https://datapackage.org" />
+</CardGrid>
