@@ -1,5 +1,5 @@
 import * as z from "zod"
-import { carSchema } from "../schemas/car.ts"
+import { carSchema } from "./schema.ts"
 
 export const CarResource = z.object({
   schema: z.literal(carSchema as any),
