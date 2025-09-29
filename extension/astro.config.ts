@@ -8,9 +8,9 @@ export default defineConfig({
   outDir: "build",
   integrations: [
     starlight({
-      title: "Car Dealer Data Package",
+      title: "Cardealer DP",
       description:
-        "dpkit is a fast TypeScript data management framework built on top of the Data Package standard and Polars DataFrames. It supports various formats like CSV, JSON, and Parquet and integrates with data platforms such as CKAN, Zenodo, and GitHub",
+        "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
       customCss: ["/assets/styles.css"],
       components: {
         SocialIcons: "./components/SocialIcons.astro",
