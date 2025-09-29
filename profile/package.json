@@ -1,0 +1,14 @@
+{
+  "name": "@cardealerdp/profile",
+  "type": "module",
+  "version": "0.0.0-development",
+  "private": true,
+  "scripts": {
+    "build": "pnpm build:copy && pnpm build:generate",
+    "build:copy": "cp source/profile.json target",
+    "build:generate": "pnpm ts-json-schema-generator --path 'source/**/*.ts' --type 'Package' --out 'target/package.json'"
+  },
+  "devDependencies": {
+    "ts-json-schema-generator": "2.4.0"
+  }
+}
