@@ -4,13 +4,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "astro build",
+    "build": "pnpm build:site && pnpm buid:profile",
+    "build:site": "astro build",
+    "build:profile": "replace-in-files profile.json --regex='(\\d+\\.){3}/schemas' --replacement",
     "preview": "astro preview",
     "start": "astro dev"
   },
   "devDependencies": {
     "@astrojs/starlight": "0.35.2",
     "astro": "5.12.9",
+    "replace-in-files-cli": "4.0.0",
     "sharp": "0.34.2",
     "starlight-scroll-to-top": "0.3.1"
   }
