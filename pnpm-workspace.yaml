@@ -1,6 +1,5 @@
 dangerouslyAllowAllBuilds: true
 packages:
   - extension
-  - profile
   - sdk-py
   - sdk-ts
