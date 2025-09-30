@@ -39,9 +39,8 @@
         "const": "car"
       },
       "schema": {
-        "const": "schemas/car.json"
+        "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json"
       }
     }
   }
 }
-

@@ -1,7 +1,7 @@
 {
   "name": "@cardealerdp/extension",
   "type": "module",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "astro build",

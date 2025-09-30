@@ -1,6 +1,6 @@
 {
   "name": "@cardealerdp/sdk-py",
   "type": "module",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "private": true
 }
