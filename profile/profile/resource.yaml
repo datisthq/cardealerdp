@@ -1,0 +1,5 @@
+carResource:
+  name:
+    const: car
+  schema:
+    const: schemas/car.yaml
