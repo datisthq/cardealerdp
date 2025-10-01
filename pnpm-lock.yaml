@@ -18,8 +18,8 @@ importers:
         specifier: 24.5.2
         version: 24.5.2
       dpkit:
-        specifier: 0.13.0
-        version: 0.13.0
+        specifier: 0.13.1
+        version: 0.13.1
       execa:
         specifier: 9.6.0
         version: 9.6.0
@@ -215,68 +215,68 @@ packages:
     resolution: {integrity: sha512-kzyuwOAQnXJNLS9PSyrk0CWk35nWJW/zl/6KvnTBMFK65gm7U1/Z5BqjxeapjZCIhQcM/DsrEmcbRwDyXyXK4A==}
     engines: {node: '>=14'}
 
-  '@dpkit/all@0.13.0':
-    resolution: {integrity: sha512-R+BHWyXqZGSDRTteM9mFupZLPmzx8MXdA1jzPKFJTsc8/kObmlwroEm0v3sdf7Aebba+qUSw8wDKTcZ1bHC8og==}
+  '@dpkit/all@0.13.1':
+    resolution: {integrity: sha512-tG/B4M3J2v1V90Jj2+6jkelPPqwNS+gc7djwzXTwY2lmEk2pG00mPP2IYey0Vix7qCTqh8SV7hgBJHeD/7eTTw==}
 
-  '@dpkit/arrow@0.13.0':
-    resolution: {integrity: sha512-oRt3sKP6oH+PbBNwmPH7ZyAHzcAyCD333IJPpIpdDfWukLhc2PrGkYtcuZxLHXqo41Ux2NnnLmsZ6C9C5X6xeg==}
+  '@dpkit/arrow@0.13.1':
+    resolution: {integrity: sha512-aYEty9tF2b4K4WKtHmqH4ctturVHFZAzs+pQKyRsGxED+77M+C2H0/g/hKHq9Z9LpQ9R8ecDWza0d+IU7vDurg==}
 
-  '@dpkit/camtrap@0.13.0':
-    resolution: {integrity: sha512-bqzCLxhYDg0WyUhp8qmiYMVeOqbYQ9AM6PYJkJUWG/TnWaeXhA1fksylFNCXuzxFXktM5dCsEw7PGqCJNa5Bxg==}
+  '@dpkit/camtrap@0.13.1':
+    resolution: {integrity: sha512-/+nqgNXys8YA1IS2sTJF/cdNfbYzdMf6lsVl17V3KPpr5NYRNGFa9PEA9SJkQWhQlpORo2NGAub8FJ7ElE27Jw==}
 
-  '@dpkit/ckan@0.13.0':
-    resolution: {integrity: sha512-mLNtEabWed0If1fTGFpuuLnM84Nd7dOR1+5KdK8dIZ1s6zm6lv98tF2l+QozN06UB7DF9p2UHRRavGAs8NAaVw==}
+  '@dpkit/ckan@0.13.1':
+    resolution: {integrity: sha512-6PNkBUndJrPZy3TEXz68ILAdqFtWxuJSFtQQivOWAZ66hlKkArPXtXRj3Y/Yfbp6HPuwtR4nIxdyllCXm6y7QQ==}
 
   '@dpkit/core@0.12.21':
     resolution: {integrity: sha512-YmvWwPKOB38YcZ0j5kg2GKF1Ptoj646jQrcYkUBinWtRgj1E3lzHUwqUeb0f6+S2CXzHES44z/dUKvXB0c2V0A==}
 
-  '@dpkit/core@0.13.0':
-    resolution: {integrity: sha512-LD0SJmJecnKDrB5CGd7HNQ8CqID2lSbXMDWegCbJXdBY6nFFHfeTpPtAB1vL2qmfV8v5HaciaXVwXeDV1FjUag==}
+  '@dpkit/core@0.13.1':
+    resolution: {integrity: sha512-UCjKHYq/ematAN/Dk8iTgL4LMjzypm8Z/kyWaeu5Fb4cy5/Fj8tokU3DMoBTmy+E6Bd6haI/fBe4FaZcsz0TKA==}
 
-  '@dpkit/csv@0.13.0':
-    resolution: {integrity: sha512-86x/PyFgaF1Bv4VXk2pXSK4bl92M1IPl4PO0WqR4JP/WRUByzdHHzupsBlOMWFNHqr8N55OJq+v0et/nQOF+4A==}
+  '@dpkit/csv@0.13.1':
+    resolution: {integrity: sha512-WmGxNkZ9mtcEl6rERrPKMPgzzc6lcIkTPo8QrIpXlKmwkRk1eUcOblYhO6RBVuY+MT5cL3+cBj+GxE/1sN1zFw==}
 
-  '@dpkit/database@0.13.0':
-    resolution: {integrity: sha512-R3VV7BDuy+RolobU7lILg2pIrbK5n0eQpvR3oYaQD+IBWrGOCxkDYJpFjExQ5ifponqyoehY6GJtK5vb/r+5Mg==}
+  '@dpkit/database@0.13.1':
+    resolution: {integrity: sha512-fwUH2NlgVCggsxcwK9vWl1AdI+i3MfGvsH1VHLQdAI/q5hEBlZ1VxsoL16D2OpxyOUe8rWo7T3KGJbtGi5llDA==}
 
-  '@dpkit/datahub@0.13.0':
-    resolution: {integrity: sha512-xnM5g/nRgMu3nD+Y+6SxmEnwhEpuyhneSi7Bc0BYdgdDVf1c86L/Yq7eFAP7Gpqx2q0NMIEYiJFrLzdz94qEDA==}
+  '@dpkit/datahub@0.13.1':
+    resolution: {integrity: sha512-XLKHigtBf6jxUrldpnZd3PAA7soZQLOVXRypd035cajLe2CX7rSSGiysEk2JtlDrki8oAA1gRWwuC16zQ49jQg==}
 
-  '@dpkit/file@0.13.0':
-    resolution: {integrity: sha512-03Houk1QnAqFn7XPCzm64qMbtnkwAggG323u02P0wM2QWmepw5wDzKb7v6lEQtEpbIG3LEAmcfNPhMfWC5qUZQ==}
+  '@dpkit/file@0.13.1':
+    resolution: {integrity: sha512-Pa7bKKwnzZaDGzoSNqIGuRMfC1ZgCrgmaQ5Mx7Xc/YcBlKJPzGLo2BxoQaxsXdslOCPrfpjxz0oywDkR5oMXYg==}
 
-  '@dpkit/folder@0.13.0':
-    resolution: {integrity: sha512-wmlAa7Ju89EMWA7Wqau3w3fJFbG0uZNoxh+kU37nUhHpGjwmQhVjsoT+iSyojKuNSkVNiqTUiN7z/WB3jkoaJg==}
+  '@dpkit/folder@0.13.1':
+    resolution: {integrity: sha512-TZiYe7gQLngEWzFldS0JdKo2PHeAhzdmzLrwvkkyto54R7VtCIpFb6rYe7vYnniPyc9OGSCsl0agY6/XCPar1Q==}
 
-  '@dpkit/github@0.13.0':
-    resolution: {integrity: sha512-IqJmQ04KkizUUNUaLJ/AWceBJ4EGjWSHCODuTVm/HM3ISsJRQIPrS370jLOls2lYbyNcnKnMCa4gB3mpU82pVw==}
+  '@dpkit/github@0.13.1':
+    resolution: {integrity: sha512-SUVc9n2c0U2Ouz86X3Lgccl3mnePRDo270H8LGbxmFsB8cFsj28I3Ds+y9e7N1J764SFMoBQY6YWV7rcVyth+g==}
 
-  '@dpkit/inline@0.13.0':
-    resolution: {integrity: sha512-MsrwchbQmAbCCLGE1v+65SMuJh4kztrVE4+IYQzuxJociJkxHOHUIQmv9VT3UeJ/FuF/yk9tp+e3LCjV4nJWoA==}
+  '@dpkit/inline@0.13.1':
+    resolution: {integrity: sha512-JK4rf54LlLighwFD4ocQLbMKoWpfOu9pUEDnghRNRfpQKL4IJXsZinGgrVTCw5GqW8/BANORofJAxsOBsYXysA==}
 
-  '@dpkit/json@0.13.0':
-    resolution: {integrity: sha512-2yxswLoxQmSiFCz7k5OQihsC4fZ2GrGDfpePr8pDwQGGU1njx6Wqk7VSTpPX3wlk4Tr6K2ovfbUzfJge54oD8g==}
+  '@dpkit/json@0.13.1':
+    resolution: {integrity: sha512-JGCl8g3OFHHKNANCHqZheO3bTuC220z6AZmGlvj0+cUiFbWCe4KDU0Yt0dX1JcJk+aIWP0FGaZdtTMZtI9oJNA==}
 
-  '@dpkit/jsonschema@0.13.0':
-    resolution: {integrity: sha512-y2x/QxIcgi0psTc7lHsHlD2nYHgLLYs7SZ3irLKJsySS539Cuf1WRkBMczU9GQF5U/CVUIkHoYzVY7/n7m+SjQ==}
+  '@dpkit/jsonschema@0.13.1':
+    resolution: {integrity: sha512-e5jMY1GjDs59mL/rw0CpPTOHEa11hBQBMalvddxBdOUU0QLoPNTrZhiTdRB9ykDIgtHqcrSlZO33bdbO2G9zqw==}
 
-  '@dpkit/ods@0.13.0':
-    resolution: {integrity: sha512-QXbMHd0kBYUAOZYJtZhLKKXqG+wQfpXuMQIFrCGsCWEPtPnuJnMgpEkpjvyQRw7aYZYMgEkKjIIfQOyJ2ttsYw==}
+  '@dpkit/ods@0.13.1':
+    resolution: {integrity: sha512-5Ejr65uNLYgLohHJNc2ypCStbUMZoSygqSYndQog1m4g5SGpiJ8Yw+ECf51MHVNtjyfHimtwB+BMpri5AMWF9Q==}
 
-  '@dpkit/parquet@0.13.0':
-    resolution: {integrity: sha512-ynTzO32mI7ynR+IbgPdQ103KMzDTq3rSFZw4sP808bE84mRmktgBk54cgZlb2up2veobbsp6QrlO64GXikiAPA==}
+  '@dpkit/parquet@0.13.1':
+    resolution: {integrity: sha512-Jq65hV2ncwUNQMrCcT4rf3vfGdrY/wrVXZtAlU6MxI1psSaceWR9N8hTHBKPVdauU8mKeiQxRpNnXa91GSefgQ==}
 
-  '@dpkit/table@0.13.0':
-    resolution: {integrity: sha512-dSLco9JDPnebVZeiey+ntI21iONycwFepzGPqCFLquUA6DJulkfWtgrBYqjcp3VR1tpUQaTAS2bWRfWQq8/w4w==}
+  '@dpkit/table@0.13.1':
+    resolution: {integrity: sha512-Wa9sNBkliRkTn+hdGaXcNu8ndMjhTuFFiETMay2vX4v+rMFqsglr2eYazSQ3jeZMWR0PxWyRCCssSenQiQU86w==}
 
-  '@dpkit/xlsx@0.13.0':
-    resolution: {integrity: sha512-C62GBFg7wotuTsqb17x8kemAgpX9k8vqPXwj5n64AiTikiCQuOjAp8ZQGUMgZ69AJho5OoQ1KVrEobFgDT4CCA==}
+  '@dpkit/xlsx@0.13.1':
+    resolution: {integrity: sha512-50IGH4WzwjALHy5kDoQj2hxPyhqVNQcL/M9sqCQbmSk9pV9HNT+Xobd+wxeRGMfA8p1U43/Mm6VahxrATXqFaA==}
 
-  '@dpkit/zenodo@0.13.0':
-    resolution: {integrity: sha512-+oIG0gUS1n9kKQbP6lT83krAoqjz59KNuxmG9F52JTBSuYipNbNZYQ6tnynIxot0+gBzBE5ZloPP32jK8Sb1MA==}
+  '@dpkit/zenodo@0.13.1':
+    resolution: {integrity: sha512-QML/gY39XY7gkCGRpLFniL3K21tA5Lz1bm3G24FoyP9GM/6N9qYCsAKl/GcSmxE5F3zjyl55i/t6QOU4F8+aUw==}
 
-  '@dpkit/zip@0.13.0':
-    resolution: {integrity: sha512-ijHeLKBtTuc+xpy7o3xUmwh+BFTuxWdNhFgWtyPxBVh3ys0UW8WGX3BPtEayuKRzesoxxdKJLD3qK9WWRRS2eg==}
+  '@dpkit/zip@0.13.1':
+    resolution: {integrity: sha512-0T8qRLforMCv9p2x7ssPEES01iDtmeZgEFcLZ6/7dGQsw4l8AG+gbxp6AiieXNK7Y0Kygpa72wkPDzNyIYf6WA==}
 
   '@emnapi/core@1.5.0':
     resolution: {integrity: sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg==}
@@ -1578,8 +1578,8 @@ packages:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
 
-  dpkit@0.13.0:
-    resolution: {integrity: sha512-joXcveNjY8ZJJZhLSyBDhn8vOp6NZSCZO8ZSW7NgCe7PhjIBG/20sGk+NtLeLTvQxqSnSkBXRM9/mzedah0Dng==}
+  dpkit@0.13.1:
+    resolution: {integrity: sha512-QyKx8OCWX+xLCgBunjFWVxMwdHgr6rZot9wXC4te183S6dqc1d8PMLNJ80ybCFiGwHBi+2fRz8mll2C7q3WPgA==}
     hasBin: true
 
   dset@3.1.4:
@@ -4020,46 +4020,46 @@ snapshots:
 
   '@ctrl/tinycolor@4.2.0': {}
 
-  '@dpkit/all@0.13.0':
+  '@dpkit/all@0.13.1':
     dependencies:
-      '@dpkit/arrow': 0.13.0
-      '@dpkit/camtrap': 0.13.0
-      '@dpkit/ckan': 0.13.0
-      '@dpkit/core': 0.13.0
-      '@dpkit/csv': 0.13.0
-      '@dpkit/database': 0.13.0
-      '@dpkit/datahub': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/folder': 0.13.0
-      '@dpkit/github': 0.13.0
-      '@dpkit/inline': 0.13.0
-      '@dpkit/json': 0.13.0
-      '@dpkit/jsonschema': 0.13.0
-      '@dpkit/ods': 0.13.0
-      '@dpkit/parquet': 0.13.0
-      '@dpkit/table': 0.13.0
-      '@dpkit/xlsx': 0.13.0
-      '@dpkit/zenodo': 0.13.0
-      '@dpkit/zip': 0.13.0
+      '@dpkit/arrow': 0.13.1
+      '@dpkit/camtrap': 0.13.1
+      '@dpkit/ckan': 0.13.1
+      '@dpkit/core': 0.13.1
+      '@dpkit/csv': 0.13.1
+      '@dpkit/database': 0.13.1
+      '@dpkit/datahub': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/folder': 0.13.1
+      '@dpkit/github': 0.13.1
+      '@dpkit/inline': 0.13.1
+      '@dpkit/json': 0.13.1
+      '@dpkit/jsonschema': 0.13.1
+      '@dpkit/ods': 0.13.1
+      '@dpkit/parquet': 0.13.1
+      '@dpkit/table': 0.13.1
+      '@dpkit/xlsx': 0.13.1
+      '@dpkit/zenodo': 0.13.1
+      '@dpkit/zip': 0.13.1
     transitivePeerDependencies:
       - pg-native
 
-  '@dpkit/arrow@0.13.0':
+  '@dpkit/arrow@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       csv-sniffer: 0.1.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/camtrap@0.13.0':
+  '@dpkit/camtrap@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
+      '@dpkit/core': 0.13.1
 
-  '@dpkit/ckan@0.13.0':
+  '@dpkit/ckan@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
 
   '@dpkit/core@0.12.21':
     dependencies:
@@ -4068,25 +4068,25 @@ snapshots:
       quick-lru: 7.2.0
       tiny-invariant: 1.3.3
 
-  '@dpkit/core@0.13.0':
+  '@dpkit/core@0.13.1':
     dependencies:
       '@sindresorhus/slugify': 0.9.1
       ajv: 8.17.1
       quick-lru: 7.2.0
       tiny-invariant: 1.3.3
 
-  '@dpkit/csv@0.13.0':
+  '@dpkit/csv@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       csv-sniffer: 0.1.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/database@0.13.0':
+  '@dpkit/database@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/table': 0.13.1
       kysely: 0.28.7
       libsql: 0.6.0-pre.20
       lru-cache: 11.2.2
@@ -4096,13 +4096,13 @@ snapshots:
     transitivePeerDependencies:
       - pg-native
 
-  '@dpkit/datahub@0.13.0':
+  '@dpkit/datahub@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
+      '@dpkit/core': 0.13.1
 
-  '@dpkit/file@0.13.0':
+  '@dpkit/file@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
+      '@dpkit/core': 0.13.1
       chardet: 2.1.0
       exit-hook: 4.0.0
       hasha: 6.0.0
@@ -4110,76 +4110,76 @@ snapshots:
       tempy: 3.1.0
       tiny-invariant: 1.3.3
 
-  '@dpkit/folder@0.13.0':
+  '@dpkit/folder@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
       exit-hook: 4.0.0
 
-  '@dpkit/github@0.13.0':
+  '@dpkit/github@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
 
-  '@dpkit/inline@0.13.0':
+  '@dpkit/inline@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/table': 0.13.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/json@0.13.0':
+  '@dpkit/json@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       csv-sniffer: 0.1.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/jsonschema@0.13.0':
+  '@dpkit/jsonschema@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
+      '@dpkit/core': 0.13.1
       '@types/json-schema': 7.0.15
       json-schema: 0.4.0
 
-  '@dpkit/ods@0.13.0':
+  '@dpkit/ods@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       nodejs-polars: 0.21.2
       xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
 
-  '@dpkit/parquet@0.13.0':
+  '@dpkit/parquet@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       csv-sniffer: 0.1.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/table@0.13.0':
+  '@dpkit/table@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
+      '@dpkit/core': 0.13.1
       nodejs-polars: 0.21.2
 
-  '@dpkit/xlsx@0.13.0':
+  '@dpkit/xlsx@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/table': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/table': 0.13.1
       nodejs-polars: 0.21.2
       xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
 
-  '@dpkit/zenodo@0.13.0':
+  '@dpkit/zenodo@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
 
-  '@dpkit/zip@0.13.0':
+  '@dpkit/zip@0.13.1':
     dependencies:
-      '@dpkit/core': 0.13.0
-      '@dpkit/file': 0.13.0
-      '@dpkit/folder': 0.13.0
+      '@dpkit/core': 0.13.1
+      '@dpkit/file': 0.13.1
+      '@dpkit/folder': 0.13.1
       yauzl-promise: 4.0.0
       yazl: 3.3.1
 
@@ -5413,11 +5413,11 @@ snapshots:
     dependencies:
       is-obj: 2.0.0
 
-  dpkit@0.13.0:
+  dpkit@0.13.1:
     dependencies:
       '@clack/prompts': 0.11.0
       '@commander-js/extra-typings': 14.0.0(commander@14.0.1)
-      '@dpkit/all': 0.13.0
+      '@dpkit/all': 0.13.1
       commander: 14.0.1
       es-toolkit: 1.39.10
       exit-hook: 4.0.0

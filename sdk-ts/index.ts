@@ -5,3 +5,5 @@ export type Package = standard.Package & extension.Package
 export type Resource = standard.Resource & extension.Resource
 export type Schema = extension.Schema
 export type Dialect = standard.Dialect
+
+export type * from "./schemas/index.ts"

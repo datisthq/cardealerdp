@@ -1,3 +1,6 @@
+import { readdir } from "node:fs/promises"
+import { writeFile } from "node:fs/promises"
+import { basename, extname } from "node:path"
 import { execa } from "execa"
 import metadata from "./package.json" with { type: "json" }
 
@@ -27,10 +30,19 @@ extension/profile.json
 > sdk-ts/profile.ts
 `
 
-await $({ shell: true })`
-dp schema convert
-extension/schemas/car.json
---to-format jsonschema
-| json2ts --additionalProperties false
-> sdk-ts/schemas/car.ts
-`
+const indexLines: string[] = []
+for (const source of await readdir("extension/schemas")) {
+  const target = `${basename(source, extname(source))}.ts`
+  indexLines.push(`export * from "./${target}"`)
+
+  await $({ shell: true })`
+  dp schema convert
+  extension/schemas/${source}
+  --to-format jsonschema
+  | json2ts --additionalProperties false
+  > sdk-ts/schemas/${target}
+  `
+}
+
+const indexContents = indexLines.join("\n")
+await writeFile("sdk-ts/schemas/index.ts", indexContents)
