@@ -11,38 +11,31 @@ const $ = execa({
   preferLocal: true,
 })
 
-// Extension
-
-await $`
-replace-in-files
-extension/profile.json
---regex='v(\\d+\\.\\d+\\.\\d+)/schemas'
---replacement=v${metadata.version}/schemas
-`
-
-// TypeScript
+// Python
 
 await $({ shell: true })`
 jq
 '.allOf |= .[1:]'
 extension/profile.json
-| json2ts --additionalProperties false
-> sdk-ts/profile.ts
+| uvx --from datamodel-code-generator datamodel-codegen
+--output sdk-py/${metadata.name}/profile.py
+--output-model-type pydantic_v2.BaseModel
 `
 
 const schemasIndexLines: string[] = []
 for (const source of await readdir("extension/schemas")) {
-  const target = `${basename(source, extname(source))}.ts`
-  schemasIndexLines.push(`export * from "./${target}"`)
+  const target = `${basename(source, extname(source))}.py`
+  schemasIndexLines.push(`from .${basename(source, extname(source))}`)
 
   await $({ shell: true })`
   dp schema convert
   extension/schemas/${source}
   --to-format jsonschema
-  | json2ts --additionalProperties false
-  > sdk-ts/schemas/${target}
+  | uvx --from datamodel-code-generator datamodel-codegen
+  --output sdk-py/${metadata.name}/schemas/${target}
+  --output-model-type pydantic_v2.BaseModel
   `
 }
 
 const schemasIndexContent = schemasIndexLines.join("\n")
-await writeFile("sdk-ts/schemas/index.ts", schemasIndexContent)
+await writeFile("sdk-py/schemas/__init__.py", schemasIndexContent)
