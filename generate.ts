@@ -30,19 +30,54 @@ extension/profile.json
 > sdk-ts/profile.ts
 `
 
-const schemasIndexLines: string[] = []
-for (const source of await readdir("extension/schemas")) {
-  const target = `${basename(source, extname(source))}.ts`
-  schemasIndexLines.push(`export * from "./${target}"`)
+const typescriptIndex: string[] = []
+for (const file of await readdir("extension/schemas")) {
+  const name = basename(file, extname(file))
+  typescriptIndex.push(`export * from "./${name}.ts"`)
 
   await $({ shell: true })`
   dp schema convert
-  extension/schemas/${source}
+  extension/schemas/${file}
   --to-format jsonschema
   | json2ts --additionalProperties false
-  > sdk-ts/schemas/${target}
+  > sdk-ts/schemas/${name}.ts
   `
 }
 
-const schemasIndexContent = schemasIndexLines.join("\n")
-await writeFile("sdk-ts/schemas/index.ts", schemasIndexContent)
+await writeFile(
+  `${import.meta.dirname}/sdk-ts/schemas/index.ts`,
+  typescriptIndex.join("\n"),
+)
+
+// Python
+
+await $({ shell: true })`
+jq
+'.allOf |= .[1:]'
+extension/profile.json
+| uvx --from datamodel-code-generator datamodel-codegen
+--input-file-type jsonschema
+--output sdk-py/${metadata.name}/profile.py
+--output-model-type pydantic_v2.BaseModel
+`
+
+const pythonIndex: string[] = []
+for (const file of await readdir("extension/schemas")) {
+  const name = basename(file, extname(file))
+  pythonIndex.push(`from .${name} import *`)
+
+  await $({ shell: true })`
+  dp schema convert
+  extension/schemas/${file}
+  --to-format jsonschema
+  | uvx --from datamodel-code-generator datamodel-codegen
+  --input-file-type jsonschema
+  --output sdk-py/${metadata.name}/schemas/${name}.py
+  --output-model-type pydantic_v2.BaseModel
+  `
+}
+
+await writeFile(
+  `${import.meta.dirname}/sdk-py/${metadata.name}/schemas/__init__.py`,
+  pythonIndex.join("\n"),
+)
