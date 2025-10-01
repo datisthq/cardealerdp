@@ -3,13 +3,9 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "build": "jq '.allOf |= .[1:]' ../extension/profile.json | json2ts --additionalProperties false > profile.ts"
+    "build": "tsc"
   },
   "dependencies": {
     "@dpkit/core": "^0.12.21"
-  },
-  "devDependencies": {
-    "@cardealerdp/extension": "workspace:*",
-    "json-schema-to-typescript": "15.0.4"
   }
 }

@@ -23,12 +23,18 @@ importers:
       husky:
         specifier: 9.1.7
         version: 9.1.7
+      json-schema-to-typescript:
+        specifier: 15.0.4
+        version: 15.0.4
       npkill:
         specifier: 0.12.2
         version: 0.12.2
       npm-check-updates:
         specifier: 18.0.1
         version: 18.0.1
+      replace-in-files-cli:
+        specifier: 4.0.0
+        version: 4.0.0
       semantic-release:
         specifier: 24.2.9
         version: 24.2.9(typescript@5.9.2)
@@ -44,9 +50,6 @@ importers:
       astro:
         specifier: 5.12.9
         version: 5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)
-      replace-in-files-cli:
-        specifier: 4.0.0
-        version: 4.0.0
       sharp:
         specifier: 0.34.2
         version: 0.34.2
@@ -61,13 +64,6 @@ importers:
       '@dpkit/core':
         specifier: ^0.12.21
         version: 0.12.21
-    devDependencies:
-      '@cardealerdp/extension':
-        specifier: workspace:*
-        version: link:../extension
-      json-schema-to-typescript:
-        specifier: 15.0.4
-        version: 15.0.4
 
 packages:
 
