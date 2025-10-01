@@ -26,3 +26,11 @@ extension/profile.json
 | json2ts --additionalProperties false
 > sdk-ts/profile.ts
 `
+
+await $({ shell: true })`
+dp schema convert
+extension/schemas/car.json
+--to-format jsonschema
+| json2ts --additionalProperties false
+> sdk-ts/schemas/car.ts
+`
