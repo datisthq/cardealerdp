@@ -14,7 +14,7 @@ export default defineConfig({
   outDir: "build",
   integrations: [
     starlight({
-      title: metadata.name,
+      title: metadata.title,
       description: metadata.description,
       customCss: ["/assets/styles.css"],
       components: {
@@ -23,7 +23,7 @@ export default defineConfig({
       logo: {
         light: "/assets/logo-light.svg",
         dark: "/assets/logo-dark.svg",
-        replacesTitle: true,
+        replacesTitle: false,
         alt: "Logo",
       },
       social: [
