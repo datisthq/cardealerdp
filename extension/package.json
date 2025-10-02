@@ -2,8 +2,11 @@
   "name": "extension",
   "type": "module",
   "version": "0.1.0",
-  "description": "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
   "private": true,
+  "slug": "cardealerdp",
+  "title": "Cardealer DP",
+  "description": "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
+  "repository": "https://github.com/datisthq/cardealerdp",
   "scripts": {
     "build": "astro build",
     "preview": "astro preview",
