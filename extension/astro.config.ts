@@ -41,6 +41,8 @@ export default defineConfig({
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
       plugins: [starlightScrollToTop(), starlightChangelogs()],
       sidebar: [
+        { label: "Overview", autogenerate: { directory: "overview" } },
+        { label: "Extension", autogenerate: { directory: "extension" } },
         {
           label: "Changelog",
           collapsed: true,
