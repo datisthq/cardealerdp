@@ -1,17 +1,27 @@
 import { readdir } from "node:fs/promises"
 import { writeFile } from "node:fs/promises"
+import { join } from "node:path"
 import { basename, extname } from "node:path"
+import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
-import metadata from "./sdk-ts/package.json" with { type: "json" }
+import pc from "picocolors"
+import metadata from "../sdk-ts/package.json" with { type: "json" }
+
+const loader = spinner()
+const root = join(import.meta.dirname, "..")
 
 const $ = execa({
-  cwd: import.meta.dirname,
+  cwd: root,
   stdout: ["inherit", "pipe"],
-  verbose: "short",
+  //verbose: "short",
   preferLocal: true,
 })
 
+intro(pc.bold("Generating the extension"))
+
 // Extension
+
+loader.start("Updating extension")
 
 await $`
 replace-in-files
@@ -20,7 +30,11 @@ extension/profile.json
 --replacement=v${metadata.version}/schemas
 `
 
+loader.stop("Extension updated!")
+
 // TypeScript
+
+loader.start("Updating TypeScript")
 
 await $({ shell: true })`
 jq
@@ -44,12 +58,13 @@ for (const file of await readdir("extension/schemas")) {
   `
 }
 
-await writeFile(
-  `${import.meta.dirname}/sdk-ts/schemas/index.ts`,
-  typescriptIndex.join("\n"),
-)
+await writeFile(`${root}/sdk-ts/schemas/index.ts`, typescriptIndex.join("\n"))
+
+loader.stop("TypeScript updated!")
 
 // Python
+
+loader.start("Updating Python")
 
 await $({ shell: true })`
 jq
@@ -78,6 +93,8 @@ for (const file of await readdir("extension/schemas")) {
 }
 
 await writeFile(
-  `${import.meta.dirname}/sdk-py/${metadata.name}/schemas/__init__.py`,
+  `${root}/sdk-py/${metadata.name}/schemas/__init__.py`,
   pythonIndex.join("\n"),
 )
+
+loader.stop("Python updated!")

@@ -5,7 +5,7 @@ import pc from "picocolors"
 const $ = execa({
   cwd: import.meta.dirname,
   stdout: ["inherit", "pipe"],
-  verbose: "short",
+  //verbose: "short",
   preferLocal: true,
 })
 

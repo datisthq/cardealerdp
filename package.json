@@ -8,11 +8,12 @@
     "pnpm": "^10.0.0"
   },
   "scripts": {
+    "bootstrap": "node tasks/bootstrap.ts",
     "build": "pnpm -r build",
     "bump": "ncu -ws -u",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
     "format": "biome check --write",
-    "generate": "node generate.ts",
+    "generate": "node tasks/generate.ts",
     "lint": "biome check",
     "prepare": "husky",
     "start": "pnpm -F extension start",
