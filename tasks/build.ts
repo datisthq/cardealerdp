@@ -10,7 +10,7 @@ import metadata from "../package.json" with { type: "json" }
 
 const loader = spinner()
 const root = join(import.meta.dirname, "..")
-const [user, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
+const [owner, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
 
 const $ = execa({
   cwd: root,
@@ -28,7 +28,7 @@ loader.start("Updating extension")
 await replaceInFile({
   files: "extension/profile.json",
   from: /githubusercontent.*schemas/g,
-  to: `githubusercontent.com/${user}/${repo}/v${metadata.version}/schemas`,
+  to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/schemas`,
 })
 
 loader.stop("Extension updated!")

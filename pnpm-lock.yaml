@@ -71,6 +71,9 @@ importers:
       sharp:
         specifier: 0.34.2
         version: 0.34.2
+      starlight-changelogs:
+        specifier: 0.1.1
+        version: 0.1.1(@astrojs/starlight@0.35.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
       starlight-scroll-to-top:
         specifier: 0.3.1
         version: 0.3.1(@astrojs/starlight@0.35.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))
@@ -90,6 +93,11 @@ packages:
   '@apidevtools/json-schema-ref-parser@11.9.3':
     resolution: {integrity: sha512-60vepv88RwcJtSHrD6MjIL6Ta3SOYbgfnkHb+ppAVK+o9mXprRtulx7VlRl3lN3bbvysAfCS7WMVfhUYemB0IQ==}
     engines: {node: '>= 16'}
+
+  '@ascorbic/loader-utils@1.0.2':
+    resolution: {integrity: sha512-pg43g83gojVtEsAkXfjWuzJhuXneJp4wM/leBftGkCPV3yxKgB92EWA+nWu735BgbBMph3P7DrVqVc3ikt+dJA==}
+    peerDependencies:
+      astro: ^4.14.0 || ^5.0.0-beta.0
 
   '@astrojs/compiler@2.13.0':
     resolution: {integrity: sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw==}
@@ -3356,6 +3364,12 @@ packages:
     resolution: {integrity: sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==}
     engines: {node: '>=10'}
 
+  starlight-changelogs@0.1.1:
+    resolution: {integrity: sha512-Upq5VMuzNiVbXHJLVTOpsaqJ14YykCefg5fhT+KdidxfG3Rd4M5kD53G2OIPxqQS0f/x6xWSdD1ORjgnKyLWeA==}
+    engines: {node: '>=18.17.1'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.35.0'
+
   starlight-scroll-to-top@0.3.1:
     resolution: {integrity: sha512-/RTpJKEjhyn9sE+d5FqQMkJyAzb2xy7e63dGdHPaG9/mFuHKYMriRoTiUGwBYMw3P5xlRJdn5RLkv3ZBOudbvA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
@@ -3878,6 +3892,10 @@ snapshots:
       '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
+
+  '@ascorbic/loader-utils@1.0.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))':
+    dependencies:
+      astro: 5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)
 
   '@astrojs/compiler@2.13.0': {}
 
@@ -7754,6 +7772,19 @@ snapshots:
   stack-utils@2.0.6:
     dependencies:
       escape-string-regexp: 2.0.0
+
+  starlight-changelogs@0.1.1(@astrojs/starlight@0.35.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)):
+    dependencies:
+      '@ascorbic/loader-utils': 1.0.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
+      '@astrojs/starlight': 0.35.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
+      github-slugger: 2.0.0
+      mdast-util-from-markdown: 2.0.2
+      mdast-util-to-markdown: 2.1.2
+      mdast-util-to-string: 4.0.0
+      unist-util-visit: 5.0.0
+    transitivePeerDependencies:
+      - astro
+      - supports-color
 
   starlight-scroll-to-top@0.3.1(@astrojs/starlight@0.35.2(astro@5.12.9(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))):
     dependencies:
