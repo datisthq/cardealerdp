@@ -8,7 +8,7 @@ import TOML from "smol-toml"
 import metadata from "../package.json" with { type: "json" }
 
 const loader = spinner()
-intro(pc.bold("Welcome to the Data Package extension template!"))
+intro(pc.bold("Configuring the extension..."))
 
 const inputSlug = await text({
   message: "Provide a slug for your extension",
@@ -50,6 +50,16 @@ const inputRepository = await text({
   },
 })
 
+const inputAuthor = await text({
+  message: "Provide an extension author",
+  placeholder: "John Doe",
+  initialValue: metadata.author,
+  validate(value) {
+    if (value.length === 0) return "Author is required!"
+    return undefined
+  },
+})
+
 const slug = isCancel(inputSlug) ? metadata.slug : inputSlug
 const title = isCancel(inputTitle) ? metadata.title : inputTitle
 const description = isCancel(inputDescription)
@@ -58,6 +68,7 @@ const description = isCancel(inputDescription)
 const repository = isCancel(inputRepository)
   ? metadata.repository
   : inputRepository
+const author = isCancel(inputAuthor) ? metadata.author : inputAuthor
 
 if (title || description || repository) {
   loader.start("Updating the extension...")
@@ -99,6 +110,25 @@ if (title || description || repository) {
   })
 
   await replaceInFile({
+    files: ["LICENSE.md"],
+    processor: source => {
+      const tree = remark().parse(source)
+
+      for (const node of tree.children) {
+        if (author) {
+          if (node.type === "paragraph") {
+            const value = `Copyright © ${new Date().getFullYear()} ${author}`
+            node.children = [{ type: "text", value }]
+            break
+          }
+        }
+      }
+
+      return remark().stringify(tree)
+    },
+  })
+
+  await replaceInFile({
     files: ["package.json", "sdk-ts/package.json"],
     processor: source => {
       const data = JSON.parse(source) as any
@@ -107,6 +137,7 @@ if (title || description || repository) {
       if (title) data.title = title
       if (description) data.description = description
       if (repository) data.repository = repository
+      if (author) data.author = author
 
       const target = JSON.stringify(data, null, 2)
       return target
@@ -122,6 +153,7 @@ if (title || description || repository) {
       if (title) data.project.title = title
       if (description) data.project.description = description
       if (repository) data.project.urls = { repository }
+      if (author) data.project.authors = { name: author }
 
       const target = TOML.stringify(data)
       return target

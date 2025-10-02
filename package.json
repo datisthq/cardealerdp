@@ -7,17 +7,17 @@
   "title": "Cardealer DP",
   "description": "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
   "repository": "https://github.com/datisthq/cardealerdp",
+  "author": "Evgeny Karev",
   "engines": {
     "node": "^24.0.0",
     "pnpm": "^10.0.0"
   },
   "scripts": {
     "build": "node tasks/build.ts && pnpm -F !extension build",
+    "configure": "node tasks/configure.ts",
     "bump": "ncu -ws -u",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
-    "setup": "node tasks/setup.ts",
     "format": "biome check --write",
-    "generate": "node tasks/generate.ts",
     "lint": "biome check",
     "prepare": "husky",
     "start": "pnpm -F extension start",
