@@ -5,10 +5,13 @@ import { basename, extname } from "node:path"
 import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
 import pc from "picocolors"
-import metadata from "../sdk-ts/package.json" with { type: "json" }
+import { replaceInFile } from "replace-in-file"
+import metadata from "../package.json" with { type: "json" }
 
 const loader = spinner()
 const root = join(import.meta.dirname, "..")
+const githubUrl = new URL(metadata.repository)
+const [user, repo] = githubUrl.pathname.split("/").filter(Boolean)
 
 const $ = execa({
   cwd: root,
@@ -17,18 +20,17 @@ const $ = execa({
   preferLocal: true,
 })
 
-intro(pc.bold("Generating the extension"))
+intro(pc.bold("Building the extension"))
 
 // Extension
 
 loader.start("Updating extension")
 
-await $`
-replace-in-files
-extension/profile.json
---regex='v(\\d+\\.\\d+\\.\\d+)/schemas'
---replacement=v${metadata.version}/schemas
-`
+await replaceInFile({
+  files: "extension/profile.json",
+  from: /githubusercontent.*schemas/g,
+  to: `githubusercontent.com/${user}/${repo}/v${metadata.version}/schemas`,
+})
 
 loader.stop("Extension updated!")
 
@@ -72,7 +74,7 @@ jq
 extension/profile.json
 | uvx --from datamodel-code-generator datamodel-codegen
 --input-file-type jsonschema
---output sdk-py/${metadata.name}/profile.py
+--output sdk-py/${metadata.slug}/profile.py
 --output-model-type pydantic_v2.BaseModel
 `
 
@@ -87,13 +89,13 @@ for (const file of await readdir("extension/schemas")) {
   --to-format jsonschema
   | uvx --from datamodel-code-generator datamodel-codegen
   --input-file-type jsonschema
-  --output sdk-py/${metadata.name}/schemas/${name}.py
+  --output sdk-py/${metadata.slug}/schemas/${name}.py
   --output-model-type pydantic_v2.BaseModel
   `
 }
 
 await writeFile(
-  `${root}/sdk-py/${metadata.name}/schemas/__init__.py`,
+  `${root}/sdk-py/${metadata.slug}/schemas/__init__.py`,
   pythonIndex.join("\n"),
 )
 
