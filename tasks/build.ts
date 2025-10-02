@@ -10,8 +10,7 @@ import metadata from "../package.json" with { type: "json" }
 
 const loader = spinner()
 const root = join(import.meta.dirname, "..")
-const githubUrl = new URL(metadata.repository)
-const [user, repo] = githubUrl.pathname.split("/").filter(Boolean)
+const [user, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
 
 const $ = execa({
   cwd: root,
@@ -76,6 +75,7 @@ extension/profile.json
 --input-file-type jsonschema
 --output sdk-py/${metadata.slug}/profile.py
 --output-model-type pydantic_v2.BaseModel
+--disable-timestamp
 `
 
 const pythonIndex: string[] = []
@@ -91,6 +91,7 @@ for (const file of await readdir("extension/schemas")) {
   --input-file-type jsonschema
   --output sdk-py/${metadata.slug}/schemas/${name}.py
   --output-model-type pydantic_v2.BaseModel
+  --disable-timestamp
   `
 }
 
