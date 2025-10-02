@@ -1,6 +1,7 @@
 import starlight from "@astrojs/starlight"
 import { defineConfig } from "astro/config"
 import starlightScrollToTop from "starlight-scroll-to-top"
+import metadata from "./package.json" with { type: "json" }
 
 export default defineConfig({
   site: "https://dpkit.dev",
@@ -8,9 +9,8 @@ export default defineConfig({
   outDir: "build",
   integrations: [
     starlight({
-      title: "Cardealer DP",
-      description:
-        "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
+      title: metadata.name,
+      description: metadata.description,
       customCss: ["/assets/styles.css"],
       components: {
         SocialIcons: "./components/SocialIcons.astro",
@@ -25,12 +25,12 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/datisthq/dpkit",
+          href: "https://github.com/datisthq/cardealerdp",
         },
       ],
       favicon: "favicon.svg",
       editLink: {
-        baseUrl: "https://github.com/datisthq/dpkit/edit/main/",
+        baseUrl: "https://github.com/datisthq/cardealerdp/edit/main/",
       },
       lastUpdated: true,
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
