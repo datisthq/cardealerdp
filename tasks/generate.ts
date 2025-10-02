@@ -19,7 +19,7 @@ const $ = execa({
   preferLocal: true,
 })
 
-intro(pc.bold("Building the extension"))
+intro(pc.bold("Generating the extension"))
 
 // Extension
 

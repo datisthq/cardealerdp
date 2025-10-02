@@ -13,10 +13,11 @@
     "pnpm": "^10.0.0"
   },
   "scripts": {
-    "build": "node tasks/build.ts && pnpm -F !extension build",
-    "configure": "node tasks/configure.ts",
+    "build": "pnpm -r build",
     "bump": "ncu -ws -u",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
+    "configure": "node tasks/configure.ts",
+    "generate": "node tasks/generate.ts",
     "format": "biome check --write",
     "lint": "biome check",
     "prepare": "husky",
