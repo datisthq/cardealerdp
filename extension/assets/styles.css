@@ -21,6 +21,7 @@
 
 .site-title {
   font-size: var(--sl-text-md);
+  gap: 0.75rem;
 }
 
 * {
