@@ -1,5 +1,5 @@
 {
-  "name": "cardealerdp-project",
+  "name": "project",
   "type": "module",
   "version": "0.1.0",
   "private": true,
@@ -30,6 +30,7 @@
     "json-schema-to-typescript": "15.0.4",
     "npkill": "0.12.2",
     "npm-check-updates": "18.0.1",
+    "picocolors": "1.1.1",
     "replace-in-files-cli": "4.0.0",
     "semantic-release": "24.2.9",
     "typescript": "5.9.2"
