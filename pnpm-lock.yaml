@@ -41,6 +41,9 @@ importers:
       picocolors:
         specifier: 1.1.1
         version: 1.1.1
+      remark:
+        specifier: 15.0.1
+        version: 15.0.1
       replace-in-file:
         specifier: 8.3.0
         version: 8.3.0
@@ -50,6 +53,9 @@ importers:
       semantic-release:
         specifier: 24.2.9
         version: 24.2.9(typescript@5.9.2)
+      smol-toml:
+        specifier: 1.4.2
+        version: 1.4.2
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -3140,6 +3146,9 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
+
+  remark@15.0.1:
+    resolution: {integrity: sha512-Eht5w30ruCXgFmxVUSlNWQ9iiimq07URKeFS3hNc8cUWy1llX4KDWfyEDZRycMc+znsN9Ux5/tJ/BFdgdOwA3A==}
 
   replace-in-file@8.3.0:
     resolution: {integrity: sha512-4VhddQiMCPIuypiwHDTM+XHjZoVu9h7ngBbSCnwGRcwdHwxltjt/m//Ep3GDwqaOx1fDSrKFQ+n7uo4uVcEz9Q==}
@@ -7440,6 +7449,15 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
+
+  remark@15.0.1:
+    dependencies:
+      '@types/mdast': 4.0.4
+      remark-parse: 11.0.0
+      remark-stringify: 11.0.0
+      unified: 11.0.5
+    transitivePeerDependencies:
+      - supports-color
 
   replace-in-file@8.3.0:
     dependencies:
