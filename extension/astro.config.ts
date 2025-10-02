@@ -3,8 +3,11 @@ import { defineConfig } from "astro/config"
 import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
+const githubUrl = new URL(metadata.repository)
+const [user, repo] = githubUrl.pathname.split("/").filter(Boolean)
+
 export default defineConfig({
-  site: "https://dpkit.dev",
+  site: `https://${user}.github.io/${repo}`,
   srcDir: ".",
   outDir: "build",
   integrations: [
@@ -18,19 +21,19 @@ export default defineConfig({
       logo: {
         light: "/assets/logo-light.svg",
         dark: "/assets/logo-dark.svg",
-        alt: "DPkit Logo",
         replacesTitle: true,
+        alt: "Logo",
       },
       social: [
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/datisthq/cardealerdp",
+          href: metadata.repository,
         },
       ],
       favicon: "favicon.svg",
       editLink: {
-        baseUrl: "https://github.com/datisthq/cardealerdp/edit/main/",
+        baseUrl: `${metadata.repository}/edit/main`,
       },
       lastUpdated: true,
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
