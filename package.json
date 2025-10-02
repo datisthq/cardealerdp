@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@clack/prompts": "0.11.0",
     "@semantic-release/exec": "7.1.0",
     "@types/node": "24.5.2",
     "dpkit": "0.13.1",
