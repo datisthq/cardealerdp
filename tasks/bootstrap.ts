@@ -1,13 +1,12 @@
+import { join } from "node:path"
 import { intro, isCancel, spinner, text } from "@clack/prompts"
-import { execa } from "execa"
 import pc from "picocolors"
+import { replaceInFile } from "replace-in-file"
 
-const $ = execa({
-  cwd: import.meta.dirname,
-  stdout: ["inherit", "pipe"],
-  //verbose: "short",
-  preferLocal: true,
-})
+const loader = spinner()
+const root = join(import.meta.dirname, "..")
+
+console.log(root)
 
 intro(pc.bold("Welcome to the Data Package extension template!"))
 
@@ -24,25 +23,23 @@ if (isCancel(name)) {
   process.exit(0)
 }
 
-const loader = spinner()
 loader.start(`Setting "${name}" as the extension name...`)
 
-await $`
-replace-in-files
-sdk-py/package.json
-sdk-ts/package.json
---regex='"name": ".*"'
---replacement='"name": "${name}"'
-`
+await replaceInFile({
+  files: ["sdk-ts/package.json"],
+  from: /"name": ".*"/g,
+  to: `"name": "${name}"`,
+})
 
-await $`
-replace-in-files
-README.md
-extension/README.md
-sdk-py/README.md
-sdk-ts/README.md
---regex='# .*'
---replacement='# ${name}'
-`
+await replaceInFile({
+  files: [
+    "extension/README.md",
+    "sdk-py/README.md",
+    "sdk-ts/README.md",
+    "README.md",
+  ],
+  from: /^# .*/g,
+  to: `# ${name}`,
+})
 
 loader.stop("Name set!")
