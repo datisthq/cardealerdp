@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@adobe/jsonschema2md':
+        specifier: 8.0.6
+        version: 8.0.6
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -82,6 +85,11 @@ importers:
         version: 0.12.21
 
 packages:
+
+  '@adobe/jsonschema2md@8.0.6':
+    resolution: {integrity: sha512-hjk2j6TmIfDi4LolQRTWdUSiC14rfDK6uC2Z15FCGiSMTdaGo6dWPJqUzNvtucJ51L9MbbHc5InbfhPwzqdnaQ==}
+    engines: {node: ^18.0.0 || >= 20.0.0}
+    hasBin: true
 
   '@alcalzone/ansi-tokenize@0.2.0':
     resolution: {integrity: sha512-qI/5TaaaCZE4yeSZ83lu0+xi1r88JSxUjnH4OP/iZF7+KKZ75u3ee5isd0LxX+6N8U0npL61YrpbthILHB6BnA==}
@@ -1391,6 +1399,10 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
+  cliui@9.0.1:
+    resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
+    engines: {node: '>=20'}
+
   clone@2.1.2:
     resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
     engines: {node: '>=0.8'}
@@ -1519,6 +1531,9 @@ packages:
 
   csv-sniffer@0.1.1:
     resolution: {integrity: sha512-HMFcKMGCaJNBtkEk1RYZxngODTx0gQnN5x494fWJizua2mdoM1h/LRooZQMkxx5RRHNP0mowlTw9xiS7QhXt/g==}
+
+  cuint@0.2.2:
+    resolution: {integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -1653,6 +1668,10 @@ packages:
   es-toolkit@1.39.10:
     resolution: {integrity: sha512-E0iGnTtbDhkeczB0T+mxmoVlT4YNweEKBLq7oaU4p11mecdsZpNWOglI4895Vh4usbQ+LsJiuLuI2L0Vdmfm2w==}
 
+  es2015-i18n-tag@1.6.1:
+    resolution: {integrity: sha512-MYoh9p+JTkgnzBh0MEBON6xUyzdmwT6wzsmmFJvZujGSXiI2kM+3XvFl6+AcIO2eeL6VWgtX9szSiDTMwDxyYA==}
+    engines: {node: '>= 4.0.0'}
+
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
 
@@ -1734,6 +1753,9 @@ packages:
   fast-uri@3.1.0:
     resolution: {integrity: sha512-iPeeDKJSWf4IEOasVVrknXpaBV0IApz/gp7S2bb7Z4Lljbl2MGJRqInZiUrQwV16cpzw/D3S5j5Julj/gT52AA==}
 
+  fastestsmallesttextencoderdecoder@1.0.22:
+    resolution: {integrity: sha512-Pb8d48e+oIuY4MaM64Cd7OW1gt4nxCHs7/ddPPZ/Ic3sg8yVGM7O9wDvZ7us6ScaUupzM+pfBolwtYhN1IxBIw==}
+
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -1742,6 +1764,9 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
+
+  ferrum@1.9.4:
+    resolution: {integrity: sha512-ooNerLoIht/dK4CQJux93z/hnt9JysrXniJCI3r6YRgmHeXC57EJ8XaTCT1Gm8LfhIAeWxyJA0O7d/W3pqDYRg==}
 
   figures@2.0.0:
     resolution: {integrity: sha512-Oa2M9atig69ZkfwiApY8F2Yy+tzMbazyvqv21R0NsSC8floSOC09BbT1ITWAdoMGQvJ/aZnR1KMwdx9tvHnTNA==}
@@ -2314,6 +2339,9 @@ packages:
     resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
     engines: {node: '>= 18'}
     hasBin: true
+
+  mdast-builder@1.1.1:
+    resolution: {integrity: sha512-a3KBk/LmYD6wKsWi8WJrGU/rXR4yuF4Men0JO0z6dSZCm5FrXXWTRDjqK0vGSqa+1M6p9edeuypZAZAzSehTUw==}
 
   mdast-util-definitions@6.0.0:
     resolution: {integrity: sha512-scTllyX6pnYNZH/AIp/0ePz6s4cZtARxImwoPJ7kS42n+MnVsI4XbnG6d4ibehRIldYMWM2LD7ImQblVhUejVQ==}
@@ -3511,6 +3539,9 @@ packages:
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
 
+  unist-util-inspect@8.1.0:
+    resolution: {integrity: sha512-mOlg8Mp33pR0eeFpo5d2902ojqFFOKMMG2hF8bmH7ZlhnmjFgh0NI3/ZDwdaBJNbvrS7LZFVrBVtIE9KZ9s7vQ==}
+
   unist-util-is@6.0.0:
     resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==}
 
@@ -3748,6 +3779,9 @@ packages:
   xxhash-wasm@1.1.0:
     resolution: {integrity: sha512-147y/6YNh+tlp6nd/2pWq38i9h6mz/EuQ6njIrmW8D1BS5nCqs0P6DG+m6zTGnNz5I+uhZ0SHxBs9BsPrwcKDA==}
 
+  xxhashjs@0.2.2:
+    resolution: {integrity: sha512-AkTuIuVTET12tpsVIQo+ZU6f/qDmKuRUcjaqR+OIvm+aCBsZ95i7UVY5WJ9TMsSaZ0DA2WxoZ4acu0sPH+OKAw==}
+
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -3760,6 +3794,10 @@ packages:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
 
+  yargs-parser@22.0.0:
+    resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
+
   yargs@16.2.0:
     resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
     engines: {node: '>=10'}
@@ -3767,6 +3805,10 @@ packages:
   yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
+
+  yargs@18.0.0:
+    resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
   yauzl-promise@4.0.0:
     resolution: {integrity: sha512-/HCXpyHXJQQHvFq9noqrjfa/WpQC2XYs3vI7tBiAi4QiIU1knvYhZGaO1QPjwIVMdqflxbmwgMXtYeaRiAE0CA==}
@@ -3808,6 +3850,29 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@adobe/jsonschema2md@8.0.6':
+    dependencies:
+      '@types/json-schema': 7.0.15
+      '@types/mdast': 4.0.4
+      '@types/unist': 3.0.3
+      es2015-i18n-tag: 1.6.1
+      ferrum: 1.9.4
+      fs-extra: 11.3.2
+      github-slugger: 2.0.0
+      js-yaml: 4.1.0
+      json-schema: 0.4.0
+      mdast-builder: 1.1.1
+      mdast-util-to-string: 4.0.0
+      readdirp: 4.1.2
+      remark-gfm: 4.0.1
+      remark-parse: 11.0.0
+      remark-stringify: 11.0.0
+      unified: 11.0.5
+      unist-util-inspect: 8.1.0
+      yargs: 18.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@alcalzone/ansi-tokenize@0.2.0':
     dependencies:
@@ -5262,6 +5327,12 @@ snapshots:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
 
+  cliui@9.0.1:
+    dependencies:
+      string-width: 7.2.0
+      strip-ansi: 7.1.2
+      wrap-ansi: 9.0.2
+
   clone@2.1.2: {}
 
   clsx@2.1.1: {}
@@ -5378,6 +5449,8 @@ snapshots:
   cssesc@3.0.0: {}
 
   csv-sniffer@0.1.1: {}
+
+  cuint@0.2.2: {}
 
   debug@4.4.3:
     dependencies:
@@ -5496,6 +5569,8 @@ snapshots:
   es-module-lexer@1.7.0: {}
 
   es-toolkit@1.39.10: {}
+
+  es2015-i18n-tag@1.6.1: {}
 
   esast-util-from-estree@2.0.0:
     dependencies:
@@ -5629,9 +5704,17 @@ snapshots:
 
   fast-uri@3.1.0: {}
 
+  fastestsmallesttextencoderdecoder@1.0.22: {}
+
   fdir@6.5.0(picomatch@4.0.3):
     optionalDependencies:
       picomatch: 4.0.3
+
+  ferrum@1.9.4:
+    dependencies:
+      fastestsmallesttextencoderdecoder: 1.0.22
+      lodash.isplainobject: 4.0.6
+      xxhashjs: 0.2.2
 
   figures@2.0.0:
     dependencies:
@@ -6300,6 +6383,10 @@ snapshots:
       supports-hyperlinks: 3.2.0
 
   marked@15.0.12: {}
+
+  mdast-builder@1.1.1:
+    dependencies:
+      '@types/unist': 2.0.11
 
   mdast-util-definitions@6.0.0:
     dependencies:
@@ -7847,6 +7934,10 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
 
+  unist-util-inspect@8.1.0:
+    dependencies:
+      '@types/unist': 3.0.3
+
   unist-util-is@6.0.0:
     dependencies:
       '@types/unist': 3.0.3
@@ -7992,11 +8083,17 @@ snapshots:
 
   xxhash-wasm@1.1.0: {}
 
+  xxhashjs@0.2.2:
+    dependencies:
+      cuint: 0.2.2
+
   y18n@5.0.8: {}
 
   yargs-parser@20.2.9: {}
 
   yargs-parser@21.1.1: {}
+
+  yargs-parser@22.0.0: {}
 
   yargs@16.2.0:
     dependencies:
@@ -8017,6 +8114,15 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  yargs@18.0.0:
+    dependencies:
+      cliui: 9.0.1
+      escalade: 3.2.0
+      get-caller-file: 2.0.5
+      string-width: 7.2.0
+      y18n: 5.0.8
+      yargs-parser: 22.0.0
 
   yauzl-promise@4.0.0:
     dependencies:
