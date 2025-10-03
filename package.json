@@ -34,6 +34,7 @@
     "dpkit": "0.13.1",
     "execa": "9.6.0",
     "husky": "9.1.7",
+    "json-schema-doc-ts": "2.0.0",
     "json-schema-to-typescript": "15.0.4",
     "npkill": "0.12.2",
     "npm-check-updates": "18.0.1",
