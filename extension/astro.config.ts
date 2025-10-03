@@ -43,12 +43,12 @@ export default defineConfig({
       sidebar: [
         { label: "Overview", autogenerate: { directory: "overview" } },
         {
-          label: "Extension",
+          label: "Specification",
           items: [
-            { label: "Metadata", slug: "extension/metadata" },
+            { label: "Metadata", slug: "specification/metadata" },
             {
               label: "Data",
-              autogenerate: { directory: "extension/data" },
+              autogenerate: { directory: "specification/data" },
             },
           ],
         },
