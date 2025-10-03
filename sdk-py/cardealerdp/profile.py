@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, RootModel
 
 
 class Dealer(BaseModel):
-    title: str
+    title: str = Field(..., description='A title for the dealer')
     url: Optional[str] = None
 
 

@@ -6,6 +6,7 @@ import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
 import { JSONSchemaMarkdownDoc } from "json-schema-doc-ts"
 import pc from "picocolors"
+import { remark } from "remark"
 import { replaceInFile } from "replace-in-file"
 import metadata from "../package.json" with { type: "json" }
 
@@ -32,16 +33,17 @@ await replaceInFile({
   to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/schemas`,
 })
 
-const profileJson = JSON.parse(
-  await readFile(join(root, "extension/profile.json"), "utf8"),
-)
-const profileMd = new JSONSchemaMarkdownDoc(profileJson).generate()
-await writeFile(
-  join(root, "extension/content/docs/extension/profile.md"),
-  profileMd,
-)
+await $`
+uvx
+jsonschema2md@1.7.0
+extension/profile.json extension/content/docs/extension/profile.md
+`
 
-process.exit(0)
+await replaceInFile({
+  files: ["extension/content/docs/extension/profile.md"],
+  from: /^#.*/,
+  to: "---\ntitle: Profile\n---",
+})
 
 loader.stop("Extension updated!")
 
@@ -83,7 +85,9 @@ await $({ shell: true })`
 jq
 '.allOf |= .[1:]'
 extension/profile.json
-| uvx --from datamodel-code-generator datamodel-codegen
+| uvx
+--from datamodel-code-generator@0.34.0
+datamodel-codegen
 --input-file-type jsonschema
 --output sdk-py/${metadata.slug}/profile.py
 --output-model-type pydantic_v2.BaseModel
@@ -99,7 +103,9 @@ for (const file of await readdir("extension/schemas")) {
   dp schema convert
   extension/schemas/${file}
   --to-format jsonschema
-  | uvx --from datamodel-code-generator datamodel-codegen
+  | uvx
+  --from datamodel-code-generator@0.34.0
+  datamodel-codegen
   --input-file-type jsonschema
   --output sdk-py/${metadata.slug}/schemas/${name}.py
   --output-model-type pydantic_v2.BaseModel
