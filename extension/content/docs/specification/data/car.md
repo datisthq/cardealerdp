@@ -6,9 +6,9 @@ title: Car
 <h2>Fields</h2>
 <table>
   <colgroup>
-    <col width="25%"/>
+    <col width="20%"/>
     <col width="65%"/>
-    <col width="10%"/>
+    <col width="15%"/>
   </colgroup>
   <thead>
     <tr>
@@ -20,15 +20,20 @@ title: Car
   <tbody>
     <tr>
       <td id="name">
-        <code>name</code>
+        <code>
+          <strong>name?</strong>
+        </code>
       </td>
       <td></td>
-      <td>string</td>
+      <td>
+        <code>string</code>
+      </td>
     </tr>
     <tr>
       <td id="price">
-        <code>price</code>
-        *
+        <code>
+          <strong>price</strong>
+        </code>
       </td>
       <td>
         <p>The price of the car</p>
@@ -44,7 +49,9 @@ title: Car
           </li>
         </ul>
       </td>
-      <td>number</td>
+      <td>
+        <code>number</code>
+      </td>
     </tr>
   </tbody>
 </table>

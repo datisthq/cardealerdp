@@ -1,7 +1,7 @@
 ---
 title: Contributing
 sidebar:
-  order: 2
+  order: 3
 ---
 
 We welcome contributions to Cardealer DP! This guide will help you get started.
