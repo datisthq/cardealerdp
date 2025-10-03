@@ -1,9 +1,10 @@
 import { readdir } from "node:fs/promises"
-import { writeFile } from "node:fs/promises"
+import { readFile, writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import { basename, extname } from "node:path"
 import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
+import { JSONSchemaMarkdownDoc } from "json-schema-doc-ts"
 import pc from "picocolors"
 import { replaceInFile } from "replace-in-file"
 import metadata from "../package.json" with { type: "json" }
@@ -30,6 +31,17 @@ await replaceInFile({
   from: /githubusercontent.*schemas/g,
   to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/schemas`,
 })
+
+const profileJson = JSON.parse(
+  await readFile(join(root, "extension/profile.json"), "utf8"),
+)
+const profileMd = new JSONSchemaMarkdownDoc(profileJson).generate()
+await writeFile(
+  join(root, "extension/content/docs/extension/profile.md"),
+  profileMd,
+)
+
+process.exit(0)
 
 loader.stop("Extension updated!")
 

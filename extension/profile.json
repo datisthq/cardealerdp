@@ -1,10 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Car Dealer Data Package Profile",
-  "allOf": [
-    { "$ref": "https://datapackage.org/profiles/2.0/datapackage.json" },
-    { "$ref": "#/definitions/Package" }
-  ],
+  "allOf": [{ "$ref": "#/definitions/Package" }],
   "definitions": {
     "Package": {
       "type": "object",
