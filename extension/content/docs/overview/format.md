@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Format
 sidebar:
   order: 1
 ---
