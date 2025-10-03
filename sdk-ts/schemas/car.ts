@@ -5,7 +5,13 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+/**
+ * A schema describing a car
+ */
 export interface Car {
   name?: string;
-  price?: number;
+  /**
+   * The price of the car
+   */
+  price: number;
 }

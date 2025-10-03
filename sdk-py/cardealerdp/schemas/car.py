@@ -5,9 +5,9 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, confloat
 
 
 class Car(BaseModel):
     name: Optional[str] = None
-    price: Optional[float] = None
+    price: confloat(ge=0.0) = Field(..., description='The price of the car')

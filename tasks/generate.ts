@@ -36,14 +36,26 @@ await replaceInFile({
 await $`
 uvx
 jsonschema2md@1.7.0
-extension/profile.json extension/content/docs/extension/metadata.md
+extension/profile.json extension/content/docs/specification/metadata.md
 `
 
 await replaceInFile({
-  files: ["extension/content/docs/extension/metadata.md"],
+  files: ["extension/content/docs/specification/metadata.md"],
   from: /^#.*/,
   to: "---\ntitle: Metadata\n---",
 })
+
+for (const file of await readdir("extension/schemas")) {
+  const name = basename(file, extname(file))
+
+  await $({ shell: true })`
+  dp schema convert
+  extension/schemas/${file}
+  --to-path extension/content/docs/specification/data/${name}.md
+  --to-format html
+  --frontmatter
+  `
+}
 
 loader.stop("Extension updated!")
 
