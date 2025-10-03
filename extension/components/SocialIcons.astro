@@ -1,12 +1,13 @@
 ---
 import Default from "@astrojs/starlight/components/SocialIcons.astro"
+import metadata from "../package.json" with { type: "json" }
 
 // It's an example of component customization
 // https://starlight.astro.build/guides/overriding-components
 ---
 
-<a href="/standard/data-package/" style="text-decoration: none"
-  ><strong>v0 (current)</strong></a
+<a href="/changelog/" style="text-decoration: none"
+  ><strong>v{metadata.version} (current)</strong></a
 >
 
 <Default {...Astro.props}><slot /></Default>
