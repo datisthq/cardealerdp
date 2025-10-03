@@ -1,5 +1,6 @@
 {
   "title": "Car",
+  "description": "A schema describing a car",
   "fields": [
     {
       "name": "name",
@@ -7,7 +8,12 @@
     },
     {
       "name": "price",
-      "type": "number"
+      "type": "number",
+      "description": "The price of the car",
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
     }
   ]
 }

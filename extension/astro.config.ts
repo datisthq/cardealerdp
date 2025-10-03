@@ -42,7 +42,16 @@ export default defineConfig({
       plugins: [starlightScrollToTop(), starlightChangelogs()],
       sidebar: [
         { label: "Overview", autogenerate: { directory: "overview" } },
-        { label: "Extension", autogenerate: { directory: "extension" } },
+        {
+          label: "Extension",
+          items: [
+            { label: "Metadata", slug: "extension/metadata" },
+            {
+              label: "Data",
+              autogenerate: { directory: "extension/data" },
+            },
+          ],
+        },
         {
           label: "Changelog",
           collapsed: true,

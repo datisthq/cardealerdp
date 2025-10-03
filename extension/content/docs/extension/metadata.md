@@ -1,5 +1,5 @@
 ---
-title: Profile
+title: Metadata
 ---
 
 ## Definitions
