@@ -68,7 +68,7 @@ jq
 extension/profile.json
 | json2ts
 --additionalProperties false
---bannerComment '// biome-ignore-all lint: DO NOT UPDATE it is generated'
+--bannerComment '// biome-ignore-all lint: DO NOT UPDATE this @generated file'
 > sdk-ts/profile.ts
 `
 
@@ -83,7 +83,7 @@ for (const file of await readdir("extension/schemas")) {
   --to-format jsonschema
   | json2ts
   --additionalProperties false
-  --bannerComment '// biome-ignore-all lint: DO NOT UPDATE it is generated'
+  --bannerComment '// biome-ignore-all lint: DO NOT UPDATE this @generated file'
   > sdk-ts/schemas/${name}.ts
   `
 }
@@ -106,6 +106,7 @@ datamodel-codegen
 --input-file-type jsonschema
 --output sdk-py/${metadata.slug}/profile.py
 --output-model-type pydantic_v2.BaseModel
+--custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
 --disable-timestamp
 `
 
@@ -125,6 +126,7 @@ for (const file of await readdir("extension/schemas")) {
   --input-file-type jsonschema
   --output sdk-py/${metadata.slug}/schemas/${name}.py
   --output-model-type pydantic_v2.BaseModel
+  --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
   --disable-timestamp
   `
 }

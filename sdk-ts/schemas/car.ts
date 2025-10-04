@@ -1,4 +1,4 @@
-// biome-ignore-all lint: DO NOT UPDATE it is generated
+// biome-ignore-all lint: DO NOT UPDATE this @generated file
 
 /**
  * A schema describing a car
