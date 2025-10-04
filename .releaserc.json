@@ -16,7 +16,7 @@
     [
       "@semantic-release/git",
       {
-        "message": "chore(release): ${nextRelease.version}"
+        "message": "chore(release): ${nextRelease.version}",
         "assets": [
           "extension/package.json",
           "extension/profile.json",
@@ -30,7 +30,7 @@
           "sdk-ts/profile.ts",
           "sdk-ts/schemas/*.ts",
           "package.json"
-        ],
+        ]
       }
     ],
     ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
