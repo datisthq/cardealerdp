@@ -6,9 +6,9 @@ import metadata from "../package.json" with { type: "json" }
 // https://starlight.astro.build/guides/overriding-components
 ---
 
-<a href="/changelog/" style="text-decoration: none"
-  ><strong>v{metadata.version} (current)</strong></a
->
+<a href="/changelog/" style="text-decoration: none">
+  <strong>v{metadata.version} (current)</strong>
+</a>
 
 <Default {...Astro.props}><slot /></Default>
 

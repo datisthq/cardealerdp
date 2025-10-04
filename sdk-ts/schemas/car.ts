@@ -1,4 +1,4 @@
-// biome-ignore-all lint: DO NOT UPDATE this @generated file
+// biome-ignore-all format: DO NOT UPDATE this @generated file
 
 /**
  * A schema describing a car
@@ -7,101 +7,101 @@ export interface Car {
   /**
    * Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers's main address
    */
-  showroomId?: string;
+  showroomId?: string
   /**
    * The title or name of the car listing
    */
-  title: string;
+  title: string
   /**
    * URL to the car listing
    */
-  url: string;
+  url: string
   /**
    * The price of the car in the currency specified
    */
-  price: number;
+  price: number
   /**
    * Currency of the price
    */
-  currency: string;
+  currency: string
   /**
    * Year of first registration (1900-2100)
    */
-  year?: number;
+  year?: number
   /**
    * Odometer reading in kilometers
    */
-  mileage: number;
+  mileage: number
   /**
    * Car brand/manufacturer
    */
-  brand: string;
+  brand: string
   /**
    * Car model name
    */
-  model: string;
+  model: string
   /**
    * Specific version or trim level
    */
-  version: string;
+  version: string
   /**
    * Fuel type
    */
-  fuel: string;
+  fuel: string
   /**
    * Transmission type
    */
-  gearbox: string;
+  gearbox: string
   /**
    * Vehicle category/body type
    */
-  category: string;
+  category: string
   /**
    * Exterior color
    */
-  color: string;
+  color: string
   /**
    * Number of doors identifier
    */
-  door: string;
+  door: string
   /**
    * Engine power in horsepower
    */
-  power?: number;
+  power?: number
   /**
    * Engine displacement in cubic centimeters
    */
-  cubics?: number;
+  cubics?: number
   /**
    * Number of seats
    */
-  seats?: number;
+  seats?: number
   /**
    * Number of previous owners
    */
-  owners?: number;
+  owners?: number
   /**
    * Month of first registration (1-12)
    */
-  month?: number;
+  month?: number
   /**
    * Warranty duration in months
    */
-  warranty?: number;
+  warranty?: number
   /**
    * Electric vehicle range in kilometers
    */
-  range?: number;
+  range?: number
   /**
    * Battery capacity in kWh for electric vehicles
    */
-  battery?: number;
+  battery?: number
   /**
    * License plate number
    */
-  plate?: string;
+  plate?: string
   /**
    * Vehicle Identification Number
    */
-  vin?: string;
+  vin?: string
 }

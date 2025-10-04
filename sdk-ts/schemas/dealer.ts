@@ -1,4 +1,4 @@
-// biome-ignore-all lint: DO NOT UPDATE this @generated file
+// biome-ignore-all format: DO NOT UPDATE this @generated file
 
 /**
  * A schema describing a car dealer
@@ -7,45 +7,45 @@ export interface Dealer {
   /**
    * The name of the dealer
    */
-  title: string;
+  title: string
   /**
    * Country where the dealer is located
    */
-  country: string;
+  country: string
   /**
    * State or region within the country
    */
-  region: string;
+  region: string
   /**
    * Closest city where the dealer is located
    */
-  city: string;
+  city: string
   /**
    * Street address of the dealer
    */
-  address: string;
+  address: string
   /**
    * Postal code of the dealer location
    */
-  postcode?: string;
+  postcode?: string
   /**
    * Contact phone number for the dealer
    */
-  phone?: string;
+  phone?: string
   /**
    * Contact email address for the dealer
    */
-  email?: string;
+  email?: string
   /**
    * URL to the dealer website
    */
-  url: string;
+  url: string
   /**
    * Longitude coordinate of the dealer location
    */
-  lon?: number;
+  lon?: number
   /**
    * Latitude coordinate of the dealer location
    */
-  lat?: number;
+  lat?: number
 }

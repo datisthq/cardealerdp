@@ -139,7 +139,6 @@
       "constraints": {
         "required": true
       }
-
     },
     {
       "name": "color",

@@ -1,7 +1,5 @@
-import { readdir } from "node:fs/promises"
-import { writeFile } from "node:fs/promises"
-import { join } from "node:path"
-import { basename, extname } from "node:path"
+import { readdir, writeFile } from "node:fs/promises"
+import { basename, extname, join } from "node:path"
 import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
 import pc from "picocolors"
@@ -68,7 +66,8 @@ jq
 extension/profile.json
 | json2ts
 --additionalProperties false
---bannerComment '// biome-ignore-all lint: DO NOT UPDATE this @generated file'
+--bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
+--no-style.semi
 > sdk-ts/profile.ts
 `
 
@@ -83,12 +82,16 @@ for (const file of await readdir("extension/schemas")) {
   --to-format jsonschema
   | json2ts
   --additionalProperties false
-  --bannerComment '// biome-ignore-all lint: DO NOT UPDATE this @generated file'
+  --bannerComment '// biome-ignore-all format: DO NOT UPDATE this @generated file'
+  --no-style.semi
   > sdk-ts/schemas/${name}.ts
   `
 }
 
-await writeFile(`${root}/sdk-ts/schemas/index.ts`, typescriptIndex.join("\n"))
+await writeFile(
+  `${root}/sdk-ts/schemas/index.ts`,
+  `${typescriptIndex.join("\n")}\n`,
+)
 
 loader.stop("TypeScript updated!")
 
