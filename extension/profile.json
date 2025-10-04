@@ -8,12 +8,11 @@
   "definitions": {
     "Package": {
       "type": "object",
-      "required": ["dealer", "resources"],
       "properties": {
         "resources": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 1,
+          "maxItems": 3,
           "items": [
             {
               "$ref": "#/definitions/Resource"

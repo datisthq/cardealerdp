@@ -6,9 +6,9 @@ export type Resource = CarResource | DealerResource | ShowroomResource;
 export interface Package {
   /**
    * @minItems 1
-   * @maxItems 1
+   * @maxItems 3
    */
-  resources: [Resource];
+  resources?: [Resource] | [Resource, unknown] | [Resource, unknown, unknown];
 }
 export interface CarResource {
   name: "car";

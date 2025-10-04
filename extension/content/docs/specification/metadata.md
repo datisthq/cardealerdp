@@ -5,7 +5,7 @@ title: Metadata
 ## Definitions
 
 - <a id="definitions/Package"></a>**`Package`** *(object)*
-  - <a id="definitions/Package/properties/resources"></a>**`resources`** *(array, required)*: Length must be equal to 1.
+  - <a id="definitions/Package/properties/resources"></a>**`resources`** *(array)*: Length must be between 1 and 3 (inclusive).
     - **Items**:
         - <a id="definitions/Package/properties/resources/items/0"></a>: Refer to *[#/definitions/Resource](#definitions/Resource)*.
 - <a id="definitions/Resource"></a>**`Resource`**
