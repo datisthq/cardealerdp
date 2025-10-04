@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from typing import List, Literal, Optional
+from typing import Any, Dict, List, Literal, Optional
 
 from pydantic import BaseModel, Field, RootModel
 
@@ -11,6 +11,14 @@ from pydantic import BaseModel, Field, RootModel
 class Dealer(BaseModel):
     title: str = Field(..., description='A title for the dealer')
     url: Optional[str] = None
+
+
+class Data(RootModel[List[Dict[str, Any]]]):
+    root: List[Dict[str, Any]] = Field(
+        ...,
+        description='Data items have to be conformed to the Car data schema',
+        min_length=1,
+    )
 
 
 class Schema(
@@ -27,6 +35,7 @@ class Schema(
 
 class Resource(BaseModel):
     name: Literal['car']
+    data: Optional[Data] = None
     schema_: Schema = Field(..., alias='schema')
 
 

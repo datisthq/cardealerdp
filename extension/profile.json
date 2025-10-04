@@ -41,14 +41,29 @@
     "Resource": {
       "type": "object",
       "required": ["name", "schema"],
+      "not": {
+        "required": ["path"]
+      },
       "properties": {
         "name": {
           "const": "car"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
         },
         "schema": {
           "$ref": "#/definitions/Schema"
         }
       }
+    },
+    "Data": {
+      "type": "array",
+      "description": "Data items have to conform to the Car data schema",
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
     },
     "Schema": {
       "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json"

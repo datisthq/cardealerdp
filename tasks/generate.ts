@@ -1,5 +1,5 @@
 import { readdir } from "node:fs/promises"
-import { readFile, writeFile } from "node:fs/promises"
+import { writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import { basename, extname } from "node:path"
 import { intro, spinner } from "@clack/prompts"
@@ -66,7 +66,9 @@ await $({ shell: true })`
 jq
 '.allOf |= .[1:]'
 extension/profile.json
-| json2ts --additionalProperties false
+| json2ts
+--additionalProperties false
+--bannerComment '// biome-ignore-all lint: DO NOT UPDATE it is generated'
 > sdk-ts/profile.ts
 `
 
@@ -79,7 +81,9 @@ for (const file of await readdir("extension/schemas")) {
   dp schema convert
   extension/schemas/${file}
   --to-format jsonschema
-  | json2ts --additionalProperties false
+  | json2ts
+  --additionalProperties false
+  --bannerComment '// biome-ignore-all lint: DO NOT UPDATE it is generated'
   > sdk-ts/schemas/${name}.ts
   `
 }
