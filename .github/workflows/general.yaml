@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  main:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,8 +30,27 @@ jobs:
         run: pnpm build
       - name: Test Packages
         run: pnpm test
+
+  release:
+    needs: [test]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+      - name: Setup Uv
+        uses: astral-sh/setup-uv@v6
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: package.json
+      - name: Install Dependencies
+        run: pnpm ci:install
       - name: Release Extension
-        if: github.event_name == 'push'
         uses: cycjimmy/semantic-release-action@v5
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

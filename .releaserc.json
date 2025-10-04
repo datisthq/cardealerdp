@@ -13,14 +13,14 @@
       }
     ],
     ["@semantic-release/exec", { "publishCmd": "pnpm generate" }],
-    ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
     [
       "@semantic-release/git",
       {
-        "assets": ["**/*.*"],
+        "assets": ["extension", "sdk-py", "sdk-ts"],
         "message": "chore(release): ${nextRelease.version}"
       }
     ],
+    ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
     ["@anolilab/semantic-release-pnpm"],
     ["@semantic-release/github"]
   ]
