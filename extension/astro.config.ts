@@ -1,16 +1,21 @@
 import starlight from "@astrojs/starlight"
 import { defineConfig } from "astro/config"
+import starlightChangelogs, {
+  makeChangelogsSidebarLinks,
+} from "starlight-changelogs"
 import starlightScrollToTop from "starlight-scroll-to-top"
+import metadata from "./package.json" with { type: "json" }
+
+const domain = new URL(metadata.homepage).hostname
 
 export default defineConfig({
-  site: "https://dpkit.dev",
+  site: metadata.homepage,
   srcDir: ".",
   outDir: "build",
   integrations: [
     starlight({
-      title: "Cardealer DP",
-      description:
-        "Cardealer DP (Car Dealer Data Package) is a data exchange format for car dealerships. It is developed on top of the Data Package standard",
+      title: metadata.title,
+      description: metadata.description,
       customCss: ["/assets/styles.css"],
       components: {
         SocialIcons: "./components/SocialIcons.astro",
@@ -18,26 +23,56 @@ export default defineConfig({
       logo: {
         light: "/assets/logo-light.svg",
         dark: "/assets/logo-dark.svg",
-        alt: "DPkit Logo",
-        replacesTitle: true,
+        replacesTitle: false,
+        alt: "Logo",
       },
       social: [
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/datisthq/dpkit",
+          href: metadata.repository,
         },
       ],
       favicon: "favicon.svg",
       editLink: {
-        baseUrl: "https://github.com/datisthq/dpkit/edit/main/",
+        baseUrl: `${metadata.repository}/edit/main`,
       },
       lastUpdated: true,
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
-      plugins: [starlightScrollToTop()],
+      plugins: [starlightScrollToTop(), starlightChangelogs()],
       sidebar: [
-        //{ label: "Overview", autogenerate: { directory: "overview" } },
-        //{ label: "Guides", autogenerate: { directory: "guides" } }
+        { label: "Overview", autogenerate: { directory: "overview" } },
+        {
+          label: "Specification",
+          items: [
+            { label: "Metadata", slug: "specification/metadata" },
+            {
+              label: "Data",
+              autogenerate: { directory: "specification/data" },
+            },
+          ],
+        },
+        {
+          label: "Changelog",
+          collapsed: true,
+          items: makeChangelogsSidebarLinks([
+            {
+              type: "recent",
+              base: "changelog",
+              count: 10,
+            },
+          ]),
+        },
+      ],
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            src: "https://plausible.io/js/script.js",
+            "data-domain": domain,
+            defer: true,
+          },
+        },
       ],
     }),
   ],

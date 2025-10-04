@@ -1,0 +1,27 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
+    [
+      "@semantic-release/release-notes-generator",
+      { "preset": "conventionalcommits" }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "publishCmd": "pnpm ci:version ${nextRelease.version}"
+      }
+    ],
+    ["@semantic-release/exec", { "publishCmd": "pnpm generate" }],
+    ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["**/*.*"],
+        "message": "chore(release): ${nextRelease.version}"
+      }
+    ],
+    ["@anolilab/semantic-release-pnpm"],
+    ["@semantic-release/github"]
+  ]
+}

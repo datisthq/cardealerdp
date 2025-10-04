@@ -17,7 +17,12 @@
   /* --sl-color-bg-inline-code: #228be6; */
 }
 
-/* Scrollbar */
+/* Title */
+
+.site-title {
+  font-size: var(--sl-text-md);
+  gap: 0.75rem;
+}
 
 * {
   scrollbar-color: var(--scrollbar-color) transparent;

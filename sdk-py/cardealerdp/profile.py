@@ -1,0 +1,51 @@
+# ruff: noqa -- DO NOT UPDATE this @generated file
+
+from __future__ import annotations
+
+from typing import Any, Dict, List, Literal, Optional, Union
+
+from pydantic import BaseModel, Field, RootModel
+
+
+class CarResource(BaseModel):
+    name: Literal['car']
+    data: Optional[List[Dict[str, Any]]] = Field(
+        None, description='Data items have to conform to the Car table schema'
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
+    ] = Field(..., alias='schema')
+
+
+class DealerResource(BaseModel):
+    name: Literal['dealer']
+    data: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description='Data items have to conform to the Dealer table schema',
+        max_length=1,
+        min_length=1,
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/dealer.json'
+    ] = Field(..., alias='schema')
+
+
+class ShowroomResource(BaseModel):
+    name: Literal['showroom']
+    data: Optional[List[Dict[str, Any]]] = Field(
+        None, description='Data items have to conform to the Showroom table schema'
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/showroom.json'
+    ] = Field(..., alias='schema')
+
+
+class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
+    root: Union[CarResource, DealerResource, ShowroomResource]
+
+
+class Package(BaseModel):
+    resources: List[Resource]
+
+
+CarDealerDataPackageProfile = Package
