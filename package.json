@@ -17,6 +17,7 @@
     "build": "pnpm -r build",
     "bump": "ncu -ws -u",
     "ci:install": "pnpm install --ignore-scripts",
+    "ci:publish": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
     "ci:version": "pnpm -r exec pnpm version --no-git-tag-version",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
     "configure": "node tasks/configure.ts",
@@ -30,7 +31,6 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "8.0.6",
-    "@anolilab/semantic-release-pnpm": "2.0.4",
     "@biomejs/biome": "2.2.5",
     "@clack/prompts": "0.11.0",
     "@semantic-release/exec": "7.1.0",

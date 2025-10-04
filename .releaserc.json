@@ -16,12 +16,19 @@
     [
       "@semantic-release/git",
       {
-        "assets": ["extension", "sdk-py", "sdk-ts"],
+        "assets": [
+          "extension",
+          "sdk-py",
+          "sdk-ts",
+          "package.json",
+          "!**/node_modules",
+          "!**/build"
+        ],
         "message": "chore(release): ${nextRelease.version}"
       }
     ],
     ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
-    ["@anolilab/semantic-release-pnpm"],
+    ["@semantic-release/exec", { "publishCmd": "pnpm ci:publish " }],
     ["@semantic-release/github"]
   ]
 }
