@@ -4,9 +4,7 @@ import { join } from "node:path"
 import { basename, extname } from "node:path"
 import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
-import { JSONSchemaMarkdownDoc } from "json-schema-doc-ts"
 import pc from "picocolors"
-import { remark } from "remark"
 import { replaceInFile } from "replace-in-file"
 import metadata from "../package.json" with { type: "json" }
 
@@ -54,6 +52,7 @@ for (const file of await readdir("extension/schemas")) {
   --to-path extension/content/docs/specification/data/${name}.md
   --to-format html
   --frontmatter
+  --silent
   `
 }
 
@@ -115,6 +114,7 @@ for (const file of await readdir("extension/schemas")) {
   dp schema convert
   extension/schemas/${file}
   --to-format jsonschema
+  --silent
   | uvx
   --from datamodel-code-generator@0.34.0
   datamodel-codegen

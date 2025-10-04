@@ -13,6 +13,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@dpkit/core": "^0.12.21"
+    "@dpkit/core": "^0.15.0"
   }
 }
