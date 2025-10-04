@@ -7,11 +7,6 @@ from typing import Any, Dict, List, Literal, Optional, Union
 from pydantic import BaseModel, Field, RootModel
 
 
-class Dealer(BaseModel):
-    title: str = Field(..., description='A title for the dealer')
-    url: Optional[str] = None
-
-
 class CarResource(BaseModel):
     name: Literal['car']
     data: Optional[List[Dict[str, Any]]] = Field(
@@ -19,6 +14,19 @@ class CarResource(BaseModel):
     )
     schema_: Literal[
         'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
+    ] = Field(..., alias='schema')
+
+
+class DealerResource(BaseModel):
+    name: Literal['dealer']
+    data: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description='Data items have to conform to the Dealer table schema',
+        max_length=1,
+        min_length=1,
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/dealer.json'
     ] = Field(..., alias='schema')
 
 
@@ -32,12 +40,11 @@ class ShowroomResource(BaseModel):
     ] = Field(..., alias='schema')
 
 
-class Resource(RootModel[Union[CarResource, ShowroomResource]]):
-    root: Union[CarResource, ShowroomResource]
+class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
+    root: Union[CarResource, DealerResource, ShowroomResource]
 
 
 class Package(BaseModel):
-    dealer: Dealer
     resources: List[Resource] = Field(..., max_length=1, min_length=1)
 
 

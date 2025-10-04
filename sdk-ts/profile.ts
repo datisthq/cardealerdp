@@ -1,22 +1,14 @@
 // biome-ignore-all lint: DO NOT UPDATE this @generated file
 
 export type CarDealerDataPackageProfile = Package;
-export type Resource = CarResource | ShowroomResource;
+export type Resource = CarResource | DealerResource | ShowroomResource;
 
 export interface Package {
-  dealer: Dealer;
   /**
    * @minItems 1
    * @maxItems 1
    */
   resources: [Resource];
-}
-export interface Dealer {
-  /**
-   * A title for the dealer
-   */
-  title: string;
-  url?: string;
 }
 export interface CarResource {
   name: "car";
@@ -25,6 +17,17 @@ export interface CarResource {
    */
   data?: [] | [{}];
   schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json";
+}
+export interface DealerResource {
+  name: "dealer";
+  /**
+   * Data items have to conform to the Dealer table schema
+   *
+   * @minItems 1
+   * @maxItems 1
+   */
+  data?: [{}];
+  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/dealer.json";
 }
 export interface ShowroomResource {
   name: "showroom";

@@ -79,33 +79,48 @@
       "name": "brand",
       "type": "string",
       "description": "Car brand/manufacturer",
-      "examples": ["Tesla"]
+      "examples": ["Tesla"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "model",
       "type": "string",
       "description": "Car model name",
-      "examples": ["Model 3"]
+      "examples": ["Model 3"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "version",
       "type": "string",
       "description": "Specific version or trim level",
-      "examples": ["Long Range AWD"]
+      "examples": ["Long Range AWD"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "fuel",
       "type": "string",
       "description": "Fuel type",
       "examples": ["electric", "petrol"],
-      "categories": ["diesel", "petrol", "hybrid", "electric"]
+      "categories": ["diesel", "petrol", "hybrid", "electric"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "gearbox",
       "type": "string",
       "description": "Transmission type",
       "examples": ["auto", "manual"],
-      "categories": ["manual", "auto"]
+      "categories": ["manual", "auto"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "category",
@@ -120,7 +135,11 @@
         "van",
         "sport",
         "cabrio"
-      ]
+      ],
+      "constraints": {
+        "required": true
+      }
+
     },
     {
       "name": "color",
@@ -136,14 +155,20 @@
         "green",
         "yellow",
         "orange"
-      ]
+      ],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "door",
       "type": "string",
-      "description": "Number of doors",
+      "description": "Number of doors identifier",
       "examples": ["fourfive", "twothree"],
-      "categories": ["twothree", "fourfive", "sixseven"]
+      "categories": ["twothree", "fourfive", "sixseven"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "power",

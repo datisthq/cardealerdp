@@ -9,7 +9,8 @@ from pydantic import BaseModel, Field, confloat, conint
 
 class Car(BaseModel):
     showroomId: Optional[str] = Field(
-        None, description='Unique identifier for the showroom where the car is located'
+        None,
+        description="Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers's main address",
     )
     title: str = Field(..., description='The title or name of the car listing')
     url: str = Field(..., description='URL to the car listing')
@@ -21,14 +22,14 @@ class Car(BaseModel):
         None, description='Year of first registration (1900-2100)'
     )
     mileage: conint(ge=0) = Field(..., description='Odometer reading in kilometers')
-    brand: Optional[str] = Field(None, description='Car brand/manufacturer')
-    model: Optional[str] = Field(None, description='Car model name')
-    version: Optional[str] = Field(None, description='Specific version or trim level')
-    fuel: Optional[str] = Field(None, description='Fuel type')
-    gearbox: Optional[str] = Field(None, description='Transmission type')
-    category: Optional[str] = Field(None, description='Vehicle category/body type')
-    color: Optional[str] = Field(None, description='Exterior color')
-    door: Optional[str] = Field(None, description='Number of doors')
+    brand: str = Field(..., description='Car brand/manufacturer')
+    model: str = Field(..., description='Car model name')
+    version: str = Field(..., description='Specific version or trim level')
+    fuel: str = Field(..., description='Fuel type')
+    gearbox: str = Field(..., description='Transmission type')
+    category: str = Field(..., description='Vehicle category/body type')
+    color: str = Field(..., description='Exterior color')
+    door: str = Field(..., description='Number of doors identifier')
     power: Optional[int] = Field(None, description='Engine power in horsepower')
     cubics: Optional[int] = Field(
         None, description='Engine displacement in cubic centimeters'

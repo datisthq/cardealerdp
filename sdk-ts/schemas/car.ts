@@ -5,7 +5,7 @@
  */
 export interface Car {
   /**
-   * Unique identifier for the showroom where the car is located
+   * Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers's main address
    */
   showroomId?: string;
   /**
@@ -35,35 +35,35 @@ export interface Car {
   /**
    * Car brand/manufacturer
    */
-  brand?: string;
+  brand: string;
   /**
    * Car model name
    */
-  model?: string;
+  model: string;
   /**
    * Specific version or trim level
    */
-  version?: string;
+  version: string;
   /**
    * Fuel type
    */
-  fuel?: string;
+  fuel: string;
   /**
    * Transmission type
    */
-  gearbox?: string;
+  gearbox: string;
   /**
    * Vehicle category/body type
    */
-  category?: string;
+  category: string;
   /**
    * Exterior color
    */
-  color?: string;
+  color: string;
   /**
-   * Number of doors
+   * Number of doors identifier
    */
-  door?: string;
+  door: string;
   /**
    * Engine power in horsepower
    */

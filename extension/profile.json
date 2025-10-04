@@ -28,6 +28,9 @@
           "$ref": "#/definitions/CarResource"
         },
         {
+          "$ref": "#/definitions/DealerResource"
+        },
+        {
           "$ref": "#/definitions/ShowroomResource"
         }
       ]

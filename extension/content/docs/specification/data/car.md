@@ -25,7 +25,7 @@ title: Car
         </code>
       </td>
       <td>
-        <p>Unique identifier for the showroom where the car is located</p>
+        <p>Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers&#x27;s main address</p>
       </td>
       <td>
         <code>string</code>
@@ -162,11 +162,18 @@ title: Car
     <tr>
       <td id="brand">
         <code>
-          <strong>brand?</strong>
+          <strong>brand</strong>
         </code>
       </td>
       <td>
         <p>Car brand/manufacturer</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -175,11 +182,18 @@ title: Car
     <tr>
       <td id="model">
         <code>
-          <strong>model?</strong>
+          <strong>model</strong>
         </code>
       </td>
       <td>
         <p>Car model name</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -188,11 +202,18 @@ title: Car
     <tr>
       <td id="version">
         <code>
-          <strong>version?</strong>
+          <strong>version</strong>
         </code>
       </td>
       <td>
         <p>Specific version or trim level</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -201,11 +222,18 @@ title: Car
     <tr>
       <td id="fuel">
         <code>
-          <strong>fuel?</strong>
+          <strong>fuel</strong>
         </code>
       </td>
       <td>
         <p>Fuel type</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -214,11 +242,18 @@ title: Car
     <tr>
       <td id="gearbox">
         <code>
-          <strong>gearbox?</strong>
+          <strong>gearbox</strong>
         </code>
       </td>
       <td>
         <p>Transmission type</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -227,11 +262,18 @@ title: Car
     <tr>
       <td id="category">
         <code>
-          <strong>category?</strong>
+          <strong>category</strong>
         </code>
       </td>
       <td>
         <p>Vehicle category/body type</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -240,11 +282,18 @@ title: Car
     <tr>
       <td id="color">
         <code>
-          <strong>color?</strong>
+          <strong>color</strong>
         </code>
       </td>
       <td>
         <p>Exterior color</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -253,11 +302,18 @@ title: Car
     <tr>
       <td id="door">
         <code>
-          <strong>door?</strong>
+          <strong>door</strong>
         </code>
       </td>
       <td>
-        <p>Number of doors</p>
+        <p>Number of doors identifier</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
