@@ -6,10 +6,10 @@ import starlightChangelogs, {
 import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
-const [owner, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
+const domain = new URL(metadata.homepage).hostname
 
 export default defineConfig({
-  site: `https://${owner}.github.io/${repo}`,
+  site: metadata.homepage,
   srcDir: ".",
   outDir: "build",
   integrations: [
@@ -62,6 +62,16 @@ export default defineConfig({
               count: 10,
             },
           ]),
+        },
+      ],
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            src: "https://plausible.io/js/script.js",
+            "data-domain": domain,
+            defer: true,
+          },
         },
       ],
     }),

@@ -12,6 +12,7 @@ dependencies = [ "dplib>=1.1" ]
 
 [project.urls]
 repository = "https://github.com/datisthq/cardealerdp"
+homepage = "https://cardealerdp.datist.io"
 
 [project.authors]
 name = "Evgeny Karev"

@@ -50,9 +50,19 @@ const inputRepository = await text({
   },
 })
 
+const inputHomepage = await text({
+  message: "Provide a homepage URL for your extension",
+  placeholder: "https://extensiondp.datist.io",
+  initialValue: metadata.homepage,
+  validate(value) {
+    if (value.length === 0) return "Homepage is required!"
+    return undefined
+  },
+})
+
 const inputAuthor = await text({
   message: "Provide an extension author",
-  placeholder: "John Doe",
+  placeholder: "Datist",
   initialValue: metadata.author,
   validate(value) {
     if (value.length === 0) return "Author is required!"
@@ -68,6 +78,7 @@ const description = isCancel(inputDescription)
 const repository = isCancel(inputRepository)
   ? metadata.repository
   : inputRepository
+const homepage = isCancel(inputHomepage) ? metadata.homepage : inputHomepage
 const author = isCancel(inputAuthor) ? metadata.author : inputAuthor
 
 if (title || description || repository) {
@@ -137,6 +148,7 @@ if (title || description || repository) {
       if (title) data.title = title
       if (description) data.description = description
       if (repository) data.repository = repository
+      if (homepage) data.homepage = homepage
       if (author) data.author = author
 
       const target = JSON.stringify(data, null, 2)
@@ -152,7 +164,7 @@ if (title || description || repository) {
       if (slug) data.project.slug = slug
       if (title) data.project.title = title
       if (description) data.project.description = description
-      if (repository) data.project.urls = { repository }
+      if (repository) data.project.urls = { repository, homepage }
       if (author) data.project.authors = { name: author }
 
       const target = TOML.stringify(data)
