@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "8.0.6",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.2.5",
     "@clack/prompts": "0.11.0",
     "@semantic-release/exec": "7.1.0",
     "@types/node": "24.5.2",

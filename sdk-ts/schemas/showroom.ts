@@ -29,6 +29,10 @@ export interface Showroom {
    */
   address: string;
   /**
+   * Postal code of the showroom location
+   */
+  postcode?: string;
+  /**
    * Contact phone number for the showroom
    */
   phone?: string;
@@ -37,9 +41,9 @@ export interface Showroom {
    */
   email?: string;
   /**
-   * Website URL of the showroom
+   * URL to the showroom
    */
-  website?: string;
+  url?: string;
   /**
    * Longitude coordinate of the showroom location
    */

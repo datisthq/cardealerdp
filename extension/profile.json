@@ -42,6 +42,9 @@
       "oneOf": [
         {
           "$ref": "#/definitions/CarResource"
+        },
+        {
+          "$ref": "#/definitions/ShowroomResource"
         }
       ]
     },
@@ -84,7 +87,7 @@
           "description": "Data items have to conform to the Showroom table schema",
           "items": [
             {
-              "2type": "object"
+              "type": "object"
             }
           ]
         },

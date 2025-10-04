@@ -139,6 +139,19 @@ title: Showroom
       </td>
     </tr>
     <tr>
+      <td id="postcode">
+        <code>
+          <strong>postcode?</strong>
+        </code>
+      </td>
+      <td>
+        <p>Postal code of the showroom location</p>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+    </tr>
+    <tr>
       <td id="phone">
         <code>
           <strong>phone?</strong>
@@ -165,13 +178,13 @@ title: Showroom
       </td>
     </tr>
     <tr>
-      <td id="website">
+      <td id="url">
         <code>
-          <strong>website?</strong>
+          <strong>url?</strong>
         </code>
       </td>
       <td>
-        <p>Website URL of the showroom</p>
+        <p>URL to the showroom</p>
       </td>
       <td>
         <code>string</code>

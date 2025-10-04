@@ -14,13 +14,16 @@ class Showroom(BaseModel):
     region: str = Field(..., description='State or region within the country')
     city: str = Field(..., description='Closest city where the showroom is located')
     address: str = Field(..., description='Street address of the showroom')
+    postcode: Optional[str] = Field(
+        None, description='Postal code of the showroom location'
+    )
     phone: Optional[str] = Field(
         None, description='Contact phone number for the showroom'
     )
     email: Optional[str] = Field(
         None, description='Contact email address for the showroom'
     )
-    website: Optional[str] = Field(None, description='Website URL of the showroom')
+    url: Optional[str] = Field(None, description='URL to the showroom')
     lon: Optional[float] = Field(
         None, description='Longitude coordinate of the showroom location'
     )

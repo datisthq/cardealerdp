@@ -19,6 +19,19 @@ title: Car
   </thead>
   <tbody>
     <tr>
+      <td id="showroomid">
+        <code>
+          <strong>showroomId?</strong>
+        </code>
+      </td>
+      <td>
+        <p>Unique identifier for the showroom where the car is located</p>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+    </tr>
+    <tr>
       <td id="title">
         <code>
           <strong>title</strong>
@@ -65,7 +78,7 @@ title: Car
         </code>
       </td>
       <td>
-        <p>The price of the car in euros</p>
+        <p>The price of the car in the currency specified</p>
         <strong>Constraints</strong>
         <ul>
           <li>
@@ -83,18 +96,38 @@ title: Car
       </td>
     </tr>
     <tr>
-      <td id="year">
+      <td id="currency">
         <code>
-          <strong>year</strong>
+          <strong>currency</strong>
         </code>
       </td>
       <td>
-        <p>Manufacturing year of the car</p>
+        <p>Currency of the price</p>
         <strong>Constraints</strong>
         <ul>
           <li>
             required:
             <code>true</code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+    </tr>
+    <tr>
+      <td id="year">
+        <code>
+          <strong>year?</strong>
+        </code>
+      </td>
+      <td>
+        <p>Year of first registration (1900-2100)</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            minimum:
+            <code>1900</code>
           </li>
         </ul>
       </td>
@@ -237,7 +270,7 @@ title: Car
         </code>
       </td>
       <td>
-        <p>Engine power in horsepower or kilowatts</p>
+        <p>Engine power in horsepower</p>
       </td>
       <td>
         <code>integer</code>
@@ -290,6 +323,17 @@ title: Car
       </td>
       <td>
         <p>Month of first registration (1-12)</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            minimum:
+            <code>1</code>
+          </li>
+          <li>
+            maximum:
+            <code>12</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>integer</code>
@@ -332,97 +376,6 @@ title: Car
       </td>
       <td>
         <code>integer</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="address">
-        <code>
-          <strong>address?</strong>
-        </code>
-      </td>
-      <td>
-        <p>Street address where the car is located</p>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="region">
-        <code>
-          <strong>region?</strong>
-        </code>
-      </td>
-      <td>
-        <p>State or region where the car is located</p>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="city">
-        <code>
-          <strong>city?</strong>
-        </code>
-      </td>
-      <td>
-        <p>City where the car is located</p>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="postcode">
-        <code>
-          <strong>postcode?</strong>
-        </code>
-      </td>
-      <td>
-        <p>Postal code of the car location</p>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="lat">
-        <code>
-          <strong>lat?</strong>
-        </code>
-      </td>
-      <td>
-        <p>Latitude coordinate of the car location</p>
-      </td>
-      <td>
-        <code>number</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="lon">
-        <code>
-          <strong>lon?</strong>
-        </code>
-      </td>
-      <td>
-        <p>Longitude coordinate of the car location</p>
-      </td>
-      <td>
-        <code>number</code>
-      </td>
-    </tr>
-    <tr>
-      <td id="dealer">
-        <code>
-          <strong>dealer?</strong>
-        </code>
-      </td>
-      <td>
-        <p>Name of the dealer or seller</p>
-      </td>
-      <td>
-        <code>string</code>
       </td>
     </tr>
     <tr>

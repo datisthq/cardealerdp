@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Literal, Optional, Union
 
 from pydantic import BaseModel, Field, RootModel
 
@@ -24,7 +24,7 @@ class CarResource(BaseModel):
 
 class ShowroomResource(BaseModel):
     name: Literal['showroom']
-    data: Optional[List[Any]] = Field(
+    data: Optional[List[Dict[str, Any]]] = Field(
         None, description='Data items have to conform to the Showroom table schema'
     )
     schema_: Literal[
@@ -32,8 +32,8 @@ class ShowroomResource(BaseModel):
     ] = Field(..., alias='schema')
 
 
-class Resource(RootModel[CarResource]):
-    root: CarResource
+class Resource(RootModel[Union[CarResource, ShowroomResource]]):
+    root: Union[CarResource, ShowroomResource]
 
 
 class Package(BaseModel):

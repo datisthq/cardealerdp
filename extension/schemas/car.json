@@ -1,7 +1,23 @@
 {
   "title": "Car",
   "description": "A schema describing a car",
+  "primaryKey": ["url"],
+  "foreignKeys": [
+    {
+      "fields": ["showroomId"],
+      "reference": {
+        "resource": "showroom",
+        "fields": ["id"]
+      }
+    }
+  ],
   "fields": [
+    {
+      "name": "showroomId",
+      "type": "string",
+      "description": "Unique identifier for the showroom where the car is located",
+      "examples": ["showroom-downtown-123"]
+    },
     {
       "name": "title",
       "type": "string",

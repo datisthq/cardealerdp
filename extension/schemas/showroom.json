@@ -1,6 +1,7 @@
 {
   "title": "Showroom",
   "description": "A schema describing a car dealer showroom",
+  "primaryKey": ["url"],
   "fields": [
     {
       "name": "id",
@@ -75,9 +76,9 @@
       "examples": ["info@downtownauto.com"]
     },
     {
-      "name": "website",
+      "name": "url",
       "type": "string",
-      "description": "Website URL of the showroom",
+      "description": "URL to the showroom",
       "examples": ["https://www.downtownauto.com"]
     },
     {

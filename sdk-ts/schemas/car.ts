@@ -5,6 +5,10 @@
  */
 export interface Car {
   /**
+   * Unique identifier for the showroom where the car is located
+   */
+  showroomId?: string;
+  /**
    * The title or name of the car listing
    */
   title: string;
@@ -13,13 +17,17 @@ export interface Car {
    */
   url: string;
   /**
-   * The price of the car in euros
+   * The price of the car in the currency specified
    */
   price: number;
   /**
-   * Manufacturing year of the car
+   * Currency of the price
    */
-  year: number;
+  currency: string;
+  /**
+   * Year of first registration (1900-2100)
+   */
+  year?: number;
   /**
    * Odometer reading in kilometers
    */
@@ -57,7 +65,7 @@ export interface Car {
    */
   door?: string;
   /**
-   * Engine power in horsepower or kilowatts
+   * Engine power in horsepower
    */
   power?: number;
   /**
@@ -88,34 +96,6 @@ export interface Car {
    * Battery capacity in kWh for electric vehicles
    */
   battery?: number;
-  /**
-   * Street address where the car is located
-   */
-  address?: string;
-  /**
-   * State or region where the car is located
-   */
-  region?: string;
-  /**
-   * City where the car is located
-   */
-  city?: string;
-  /**
-   * Postal code of the car location
-   */
-  postcode?: string;
-  /**
-   * Latitude coordinate of the car location
-   */
-  lat?: number;
-  /**
-   * Longitude coordinate of the car location
-   */
-  lon?: number;
-  /**
-   * Name of the dealer or seller
-   */
-  dealer?: string;
   /**
    * License plate number
    */
