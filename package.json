@@ -16,6 +16,8 @@
   "scripts": {
     "build": "pnpm -r build",
     "bump": "ncu -ws -u",
+    "ci:install": "pnpm install --ignore-scripts",
+    "ci:version": "pnpm -r exec pnpm version --no-git-tag-version",
     "clean": "npkill -D -x -y -nu && rm pnpm-lock.yaml",
     "configure": "node tasks/configure.ts",
     "generate": "node tasks/generate.ts",
@@ -28,10 +30,12 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "8.0.6",
+    "@anolilab/semantic-release-pnpm": "2.0.4",
     "@biomejs/biome": "2.2.5",
     "@clack/prompts": "0.11.0",
     "@semantic-release/exec": "7.1.0",
     "@types/node": "24.5.2",
+    "conventional-changelog-conventionalcommits": "9.1.0",
     "dpkit": "0.15.0",
     "execa": "9.6.0",
     "husky": "9.1.7",
