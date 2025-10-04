@@ -28,7 +28,7 @@ loader.start("Updating extension")
 await replaceInFile({
   files: "extension/profile.json",
   from: /githubusercontent.*schemas/g,
-  to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/schemas`,
+  to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/extension/schemas`,
 })
 
 await $`

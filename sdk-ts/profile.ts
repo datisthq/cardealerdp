@@ -6,7 +6,7 @@ export type Resource = CarResource;
  * Data items have to conform to the Car data schema
  */
 export type Data = [] | [{}];
-export type Schema = "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json";
+export type Schema = "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json";
 
 export interface Package {
   dealer: Dealer;

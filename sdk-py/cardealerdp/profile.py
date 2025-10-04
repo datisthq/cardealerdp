@@ -21,12 +21,12 @@ class Data(RootModel[List[Dict[str, Any]]]):
 class Schema(
     RootModel[
         Literal[
-            'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json'
+            'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
         ]
     ]
 ):
     root: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
     ]
 
 

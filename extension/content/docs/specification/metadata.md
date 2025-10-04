@@ -20,4 +20,4 @@ title: Metadata
 - <a id="definitions/Data"></a>**`Data`** *(array)*: Data items have to conform to the Car data schema.
   - **Items**:
       - <a id="definitions/Data/items/0"></a>*object*
-- <a id="definitions/Schema"></a>**`Schema`**: Must be: `"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/schemas/car.json"`.
+- <a id="definitions/Schema"></a>**`Schema`**: Must be: `"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json"`.
