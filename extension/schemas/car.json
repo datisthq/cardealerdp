@@ -1,4 +1,5 @@
 {
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
   "title": "Car",
   "description": "A schema describing a car",
   "primaryKey": ["url"],
@@ -15,7 +16,7 @@
     {
       "name": "showroomId",
       "type": "string",
-      "description": "Unique identifier for the showroom where the car is located",
+      "description": "Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers's main address",
       "examples": ["showroom-downtown-123"]
     },
     {
