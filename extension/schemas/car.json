@@ -12,14 +12,185 @@
       }
     },
     {
+      "name": "url",
+      "type": "string",
+      "description": "URL to the car listing",
+      "examples": ["https://example.com/cars/tesla-model-3-2023"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
       "name": "price",
       "type": "number",
-      "description": "The price of the car",
+      "description": "The price of the car in the currency specified",
       "examples": [45990],
       "constraints": {
         "required": true,
         "minimum": 0
       }
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "description": "Currency of the price",
+      "examples": ["EUR"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "year",
+      "type": "integer",
+      "description": "Year of first registration (1900-2100)",
+      "examples": [2023],
+      "constraints": {
+        "minimum": 1900
+      }
+    },
+    {
+      "name": "mileage",
+      "type": "integer",
+      "description": "Odometer reading in kilometers",
+      "examples": [15000],
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "brand",
+      "type": "string",
+      "description": "Car brand/manufacturer",
+      "examples": ["Tesla"]
+    },
+    {
+      "name": "model",
+      "type": "string",
+      "description": "Car model name",
+      "examples": ["Model 3"]
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "Specific version or trim level",
+      "examples": ["Long Range AWD"]
+    },
+    {
+      "name": "fuel",
+      "type": "string",
+      "description": "Fuel type",
+      "examples": ["electric", "petrol"],
+      "categories": ["diesel", "petrol", "hybrid", "electric"]
+    },
+    {
+      "name": "gearbox",
+      "type": "string",
+      "description": "Transmission type",
+      "examples": ["auto", "manual"],
+      "categories": ["manual", "auto"]
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "description": "Vehicle category/body type",
+      "examples": ["suv", "estate", "sport"],
+      "categories": [
+        "small",
+        "estate",
+        "saloon",
+        "suv",
+        "van",
+        "sport",
+        "cabrio"
+      ]
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "description": "Exterior color",
+      "examples": ["white", "black", "blue"],
+      "categories": [
+        "grey",
+        "black",
+        "white",
+        "blue",
+        "red",
+        "green",
+        "yellow",
+        "orange"
+      ]
+    },
+    {
+      "name": "door",
+      "type": "string",
+      "description": "Number of doors",
+      "examples": ["fourfive", "twothree"],
+      "categories": ["twothree", "fourfive", "sixseven"]
+    },
+    {
+      "name": "power",
+      "type": "integer",
+      "description": "Engine power in horsepower",
+      "examples": [283]
+    },
+    {
+      "name": "cubics",
+      "type": "integer",
+      "description": "Engine displacement in cubic centimeters",
+      "examples": [1998]
+    },
+    {
+      "name": "seats",
+      "type": "integer",
+      "description": "Number of seats",
+      "examples": [5]
+    },
+    {
+      "name": "owners",
+      "type": "integer",
+      "description": "Number of previous owners",
+      "examples": [1]
+    },
+    {
+      "name": "month",
+      "type": "integer",
+      "description": "Month of first registration (1-12)",
+      "examples": [6],
+      "constraints": {
+        "minimum": 1,
+        "maximum": 12
+      }
+    },
+    {
+      "name": "warranty",
+      "type": "integer",
+      "description": "Warranty duration in months",
+      "examples": [24]
+    },
+    {
+      "name": "range",
+      "type": "integer",
+      "description": "Electric vehicle range in kilometers",
+      "examples": [580]
+    },
+    {
+      "name": "battery",
+      "type": "integer",
+      "description": "Battery capacity in kWh for electric vehicles",
+      "examples": [75]
+    },
+    {
+      "name": "plate",
+      "type": "string",
+      "description": "License plate number",
+      "examples": ["AB-12-CD"]
+    },
+    {
+      "name": "vin",
+      "type": "string",
+      "description": "Vehicle Identification Number",
+      "examples": ["5YJ3E1EA4KF123456"]
     }
   ]
 }

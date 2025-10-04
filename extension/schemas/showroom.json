@@ -57,6 +57,12 @@
       }
     },
     {
+      "name": "postcode",
+      "type": "string",
+      "description": "Postal code of the showroom location",
+      "examples": ["90210"]
+    },
+    {
       "name": "phone",
       "type": "string",
       "description": "Contact phone number for the showroom",
