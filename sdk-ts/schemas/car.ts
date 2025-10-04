@@ -4,7 +4,10 @@
  * A schema describing a car
  */
 export interface Car {
-  name?: string;
+  /**
+   * The title or name of the car listing
+   */
+  title: string;
   /**
    * The price of the car
    */

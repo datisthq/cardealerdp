@@ -19,12 +19,21 @@ title: Car
   </thead>
   <tbody>
     <tr>
-      <td id="name">
+      <td id="title">
         <code>
-          <strong>name?</strong>
+          <strong>title</strong>
         </code>
       </td>
-      <td></td>
+      <td>
+        <p>The title or name of the car listing</p>
+        <strong>Constraints</strong>
+        <ul>
+          <li>
+            required:
+            <code>true</code>
+          </li>
+        </ul>
+      </td>
       <td>
         <code>string</code>
       </td>

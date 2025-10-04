@@ -3,13 +3,19 @@
   "description": "A schema describing a car",
   "fields": [
     {
-      "name": "name",
-      "type": "string"
+      "name": "title",
+      "type": "string",
+      "description": "The title or name of the car listing",
+      "examples": ["2023 Tesla Model 3 Long Range"],
+      "constraints": {
+        "required": true
+      }
     },
     {
       "name": "price",
       "type": "number",
       "description": "The price of the car",
+      "examples": [45990],
       "constraints": {
         "required": true,
         "minimum": 0

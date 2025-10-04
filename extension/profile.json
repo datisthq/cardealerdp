@@ -56,24 +56,42 @@
           "const": "car"
         },
         "data": {
-          "$ref": "#/definitions/Data"
+          "type": "array",
+          "description": "Data items have to conform to the Car table schema",
+          "items": [
+            {
+              "type": "object"
+            }
+          ]
         },
         "schema": {
-          "$ref": "#/definitions/Schema"
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json"
         }
       }
     },
-    "Data": {
-      "type": "array",
-      "description": "Data items have to conform to the Car data schema",
-      "items": [
-        {
-          "type": "object"
+    "ShowroomResource": {
+      "type": "object",
+      "required": ["name", "schema"],
+      "not": {
+        "required": ["path"]
+      },
+      "properties": {
+        "name": {
+          "const": "showroom"
+        },
+        "data": {
+          "type": "array",
+          "description": "Data items have to conform to the Showroom table schema",
+          "items": [
+            {
+              "2type": "object"
+            }
+          ]
+        },
+        "schema": {
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/showroom.json"
         }
-      ]
-    },
-    "Schema": {
-      "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json"
+      }
     }
   }
 }

@@ -12,28 +12,24 @@ class Dealer(BaseModel):
     url: Optional[str] = None
 
 
-class Data(RootModel[List[Dict[str, Any]]]):
-    root: List[Dict[str, Any]] = Field(
-        ..., description='Data items have to conform to the Car data schema'
-    )
-
-
-class Schema(
-    RootModel[
-        Literal[
-            'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
-        ]
-    ]
-):
-    root: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
-    ]
-
-
 class CarResource(BaseModel):
     name: Literal['car']
-    data: Optional[Data] = None
-    schema_: Schema = Field(..., alias='schema')
+    data: Optional[List[Dict[str, Any]]] = Field(
+        None, description='Data items have to conform to the Car table schema'
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json'
+    ] = Field(..., alias='schema')
+
+
+class ShowroomResource(BaseModel):
+    name: Literal['showroom']
+    data: Optional[List[Any]] = Field(
+        None, description='Data items have to conform to the Showroom table schema'
+    )
+    schema_: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/showroom.json'
+    ] = Field(..., alias='schema')
 
 
 class Resource(RootModel[CarResource]):
