@@ -58,7 +58,7 @@ We welcome contributions to Cardealer DP! This guide will help you get started.
 5. **Commit your changes** with a descriptive message:
    ```bash
    git add .
-   git commit -m "Add: your feature description"
+   git commit -m "Your feature description"
    ```
 
 6. **Push to your fork**:
