@@ -6,7 +6,7 @@ import starlightChangelogs, {
 import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
-const { origin, pathname } = new URL(metadata.homepage)
+const { origin, hostname, pathname } = new URL(metadata.homepage)
 
 export default defineConfig({
   site: origin,
@@ -70,7 +70,7 @@ export default defineConfig({
           tag: "script",
           attrs: {
             src: "https://plausible.io/js/script.js",
-            "data-domain": domain,
+            "data-domain": hostname,
             defer: true,
           },
         },
