@@ -165,7 +165,7 @@ if (title || description || repository) {
       if (title) data.project.title = title
       if (description) data.project.description = description
       if (repository) data.project.urls = { repository, homepage }
-      if (author) data.project.authors = { name: author }
+      if (author) data.project.authors = [{ name: author }]
 
       const target = TOML.stringify(data)
       return target
