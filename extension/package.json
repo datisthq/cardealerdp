@@ -1,7 +1,7 @@
 {
   "name": "extension",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "slug": "cardealerdp",
   "title": "Cardealer DP",
