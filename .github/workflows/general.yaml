@@ -31,6 +31,32 @@ jobs:
       - name: Test Packages
         run: pnpm test
 
+  deploy:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+      - name: Setup Uv
+        uses: astral-sh/setup-uv@v6
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: package.json
+      - name: Install Dependencies
+        run: pnpm install:ci
+      - name: Build Site
+        run: pnpm -F extension build
+      - name: Publush to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: site
+          folder: extension/build
+          clean: true
+
   release:
     needs: [test]
     environment: release
