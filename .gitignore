@@ -69,3 +69,5 @@ dist/
 .serena/
 .mcp.json
 .env
+.venv
+uv.lock
