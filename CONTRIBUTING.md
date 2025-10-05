@@ -28,13 +28,13 @@ We welcome contributions to Cardealer DP! This guide will help you get started.
 
 ### Available Scripts
 
-- **`pnpm start`** - Start the documentation site in development mode
+- **`pnpm configure`** - Configure extension metadata (slug, title, description, etc.)
 - **`pnpm generate`** - Generate TypeScript and Python SDKs from schemas
+- **`pnpm start`** - Start the documentation site in development mode
 - **`pnpm build`** - Build all packages (extension, SDKs)
 - **`pnpm test`** - Run linting and type checking
 - **`pnpm format`** - Format code with Biome
 - **`pnpm lint`** - Check code quality with Biome
-- **`pnpm configure`** - Configure extension metadata (slug, title, description, etc.)
 
 ### Making Changes
 
