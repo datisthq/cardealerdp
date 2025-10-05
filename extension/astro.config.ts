@@ -6,12 +6,11 @@ import starlightChangelogs, {
 import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
-const domain = new URL(metadata.homepage).hostname
-const basedir = new URL(metadata.homepage).pathname
+const { origin, pathname } = new URL(metadata.homepage)
 
 export default defineConfig({
-  site: domain,
-  base: basedir,
+  site: origin,
+  base: pathname,
   srcDir: ".",
   outDir: "build",
   integrations: [
