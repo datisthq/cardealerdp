@@ -8,33 +8,28 @@
     ],
     [
       "@semantic-release/exec",
-      {
-        "publishCmd": "pnpm ci:version ${nextRelease.version}"
-      }
+      { "prepareCmd": "pnpm ci:version ${nextRelease.version}" }
     ],
-    ["@semantic-release/exec", { "publishCmd": "pnpm generate" }],
+    ["@semantic-release/exec", { "prepareCmd": "pnpm generate" }],
     [
       "@semantic-release/git",
       {
         "message": "chore(release): ${nextRelease.version}",
         "assets": [
-          "extension/package.json",
-          "extension/profile.json",
-          "extension/schemas/*.json",
-          "extension/content/docs/specification/profile.md",
-          "extension/content/docs/specification/data/*.md",
-          "sdk-py/pyproject.toml",
-          "sdk-py/*/profile.py",
-          "sdk-py/*/schemas/*.py",
-          "sdk-ts/package.json",
-          "sdk-ts/profile.ts",
-          "sdk-ts/schemas/*.ts",
+          ["extension", "!**/node_modules/**", "!**/build/**"],
+          ["sdk-py", "!**/node_modules/**", "!**/build/**"],
+          ["sdk-ts", "!**/node_modules/**", "!**/build/**"],
           "package.json"
         ]
       }
     ],
-    ["@semantic-release/exec", { "publishCmd": "pnpm build " }],
-    ["@semantic-release/exec", { "publishCmd": "pnpm ci:publish " }],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "pnpm build",
+        "publishCmd": "pnpm ci:publish "
+      }
+    ],
     ["@semantic-release/github"]
   ]
 }
