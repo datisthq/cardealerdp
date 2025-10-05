@@ -13,7 +13,7 @@ class CarResource(BaseModel):
         None, description='Data items have to conform to the Car table schema'
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.3/extension/schemas/car.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.4/extension/schemas/car.json'
     ] = Field(..., alias='schema')
 
 
@@ -26,7 +26,7 @@ class DealerResource(BaseModel):
         min_length=1,
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.3/extension/schemas/dealer.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.4/extension/schemas/dealer.json'
     ] = Field(..., alias='schema')
 
 
@@ -36,7 +36,7 @@ class ShowroomResource(BaseModel):
         None, description='Data items have to conform to the Showroom table schema'
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.3/extension/schemas/showroom.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.4/extension/schemas/showroom.json'
     ] = Field(..., alias='schema')
 
 
