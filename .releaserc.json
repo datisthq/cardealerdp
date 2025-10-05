@@ -20,9 +20,17 @@
       {
         "message": "chore(release): ${nextRelease.version}",
         "assets": [
-          ["extension", "!**/node_modules/**", "!**/build/**"],
-          ["sdk-py", "!**/node_modules/**", "!**/build/**"],
-          ["sdk-ts", "!**/node_modules/**", "!**/build/**"],
+          "extension/package.json",
+          "extension/profile.json",
+          "extension/schemas/*.json",
+          "extension/content/docs/specification/profile.md",
+          "extension/content/docs/specification/data/*.md",
+          "sdk-py/pyproject.toml",
+          "sdk-py/*/profile.py",
+          "sdk-py/*/schemas/*.py",
+          "sdk-ts/package.json",
+          "sdk-ts/profile.ts",
+          "sdk-ts/schemas/*.ts",
           "package.json"
         ]
       }
