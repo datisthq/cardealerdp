@@ -140,7 +140,7 @@ if (title || description || repository) {
   })
 
   await replaceInFile({
-    files: ["package.json", "sdk-ts/package.json"],
+    files: ["extension/package.json", "sdk-ts/package.json", "package.json"],
     processor: source => {
       const data = JSON.parse(source) as any
 
