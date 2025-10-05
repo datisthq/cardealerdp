@@ -7,7 +7,7 @@ import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
 const domain = new URL(metadata.homepage).hostname
-const basedir = new URL(import.meta.url).pathname
+const basedir = new URL(metadata.homepage).pathname
 
 export default defineConfig({
   site: domain,
