@@ -14,7 +14,7 @@
     [
       "@semantic-release/git",
       {
-        "message": "chore(release): ${nextRelease.version}",
+        "message": "release: v${nextRelease.version}",
         "assets": [
           "extension/package.json",
           "extension/profile.json",
