@@ -34,6 +34,10 @@ jobs:
   deploy:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v5
@@ -50,12 +54,14 @@ jobs:
         run: pnpm install:ci
       - name: Build Site
         run: pnpm -F extension build
-      - name: Publush to Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload Site
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: site
-          folder: extension/build
-          clean: true
+          path: extension/build
+      - name: Deploy Site
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   release:
     needs: [test]
