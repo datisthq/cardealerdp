@@ -3,6 +3,10 @@ title: Dealer
 ---
 
 <p>A schema describing a car dealer</p>
+<h2>Primary Key</h2>
+<p>
+  <code>url</code>
+</p>
 <h2>Fields</h2>
 <table>
   <colgroup>
@@ -33,6 +37,12 @@ title: Dealer
             <code>true</code>
           </li>
         </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>Downtown Auto Gallery</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -51,6 +61,12 @@ title: Dealer
           <li>
             required:
             <code>true</code>
+          </li>
+        </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>United States</code>
           </li>
         </ul>
       </td>
@@ -73,6 +89,12 @@ title: Dealer
             <code>true</code>
           </li>
         </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>California</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -91,6 +113,12 @@ title: Dealer
           <li>
             required:
             <code>true</code>
+          </li>
+        </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>Los Angeles</code>
           </li>
         </ul>
       </td>
@@ -113,6 +141,12 @@ title: Dealer
             <code>true</code>
           </li>
         </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>123 Main Street</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -126,6 +160,12 @@ title: Dealer
       </td>
       <td>
         <p>Postal code of the dealer location</p>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>90210</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -139,6 +179,12 @@ title: Dealer
       </td>
       <td>
         <p>Contact phone number for the dealer</p>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>+1-555-123-4567</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -152,6 +198,12 @@ title: Dealer
       </td>
       <td>
         <p>Contact email address for the dealer</p>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>info@downtownauto.com</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -172,6 +224,12 @@ title: Dealer
             <code>true</code>
           </li>
         </ul>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>https://www.downtownauto.com</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>string</code>
@@ -185,6 +243,12 @@ title: Dealer
       </td>
       <td>
         <p>Longitude coordinate of the dealer location</p>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>-118.2437</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>number</code>
@@ -198,6 +262,12 @@ title: Dealer
       </td>
       <td>
         <p>Latitude coordinate of the dealer location</p>
+        <strong>Examples</strong>
+        <ul>
+          <li>
+            <code>34.0522</code>
+          </li>
+        </ul>
       </td>
       <td>
         <code>number</code>

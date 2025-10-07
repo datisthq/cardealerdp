@@ -12,11 +12,10 @@
       "properties": {
         "resources": {
           "type": "array",
-          "items": [
-            {
-              "$ref": "#/definitions/Resource"
-            }
-          ]
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Resource"
+          }
         }
       }
     },
@@ -47,11 +46,9 @@
           "type": "array",
           "description": "Data items have to conform to the Car table schema",
           "minItems": 1,
-          "items": [
-            {
-              "type": "object"
-            }
-          ]
+          "items": {
+            "type": "object"
+          }
         },
         "schema": {
           "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/car.json"
@@ -73,11 +70,9 @@
           "description": "Data items have to conform to the Dealer table schema",
           "minItems": 1,
           "maxItems": 1,
-          "items": [
-            {
-              "type": "object"
-            }
-          ]
+          "items": {
+            "type": "object"
+          }
         },
         "schema": {
           "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/dealer.json"
@@ -98,11 +93,9 @@
           "type": "array",
           "description": "Data items have to conform to the Showroom table schema",
           "minItems": 1,
-          "items": [
-            {
-              "type": "object"
-            }
-          ]
+          "items": {
+            "type": "object"
+          }
         },
         "schema": {
           "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/showroom.json"

@@ -19,7 +19,7 @@
           "extension/package.json",
           "extension/profile.json",
           "extension/schemas/*.json",
-          "extension/content/docs/specification/profile.md",
+          "extension/content/docs/specification/metadata.md",
           "extension/content/docs/specification/data/*.md",
           "sdk-py/pyproject.toml",
           "sdk-py/*/profile.py",

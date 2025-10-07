@@ -4,7 +4,10 @@ export type CarDealerDataPackageProfile = Package
 export type Resource = CarResource | DealerResource | ShowroomResource
 
 export interface Package {
-  resources: [] | [Resource]
+  /**
+   * @minItems 1
+   */
+  resources: [Resource, ...Resource[]]
 }
 export interface CarResource {
   name: "car"
@@ -13,7 +16,7 @@ export interface CarResource {
    *
    * @minItems 1
    */
-  data: [{}]
+  data: [{}, ...{}[]]
   schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/car.json"
 }
 export interface DealerResource {
@@ -34,6 +37,6 @@ export interface ShowroomResource {
    *
    * @minItems 1
    */
-  data: [{}]
+  data: [{}, ...{}[]]
   schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/showroom.json"
 }

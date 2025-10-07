@@ -49,7 +49,7 @@ class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
 
 
 class Package(BaseModel):
-    resources: List[Resource]
+    resources: List[Resource] = Field(..., min_length=1)
 
 
 CarDealerDataPackageProfile = Package
