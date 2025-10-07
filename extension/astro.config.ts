@@ -7,12 +7,11 @@ import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
 const { origin, hostname, pathname } = new URL(metadata.homepage)
-
-console.log(origin, pathname)
+const basedir = import.meta.env.PROD ? pathname : "/"
 
 export default defineConfig({
   site: origin,
-  base: pathname,
+  base: basedir,
   srcDir: ".",
   outDir: "build",
   integrations: [
