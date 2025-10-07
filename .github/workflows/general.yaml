@@ -55,7 +55,6 @@ jobs:
       - name: Build Site
         run: pnpm -F extension build
       - name: Upload Site
-        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: extension/build

@@ -8,6 +8,8 @@ import metadata from "./package.json" with { type: "json" }
 
 const { origin, hostname, pathname } = new URL(metadata.homepage)
 
+console.log(origin, pathname)
+
 export default defineConfig({
   site: origin,
   base: pathname,
