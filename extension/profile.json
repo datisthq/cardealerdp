@@ -35,7 +35,7 @@
     },
     "CarResource": {
       "type": "object",
-      "required": ["name", "schema"],
+      "required": ["name", "data", "schema"],
       "not": {
         "required": ["path"]
       },
@@ -46,6 +46,7 @@
         "data": {
           "type": "array",
           "description": "Data items have to conform to the Car table schema",
+          "minItems": 1,
           "items": [
             {
               "type": "object"
@@ -59,7 +60,7 @@
     },
     "DealerResource": {
       "type": "object",
-      "required": ["name", "schema"],
+      "required": ["name", "data", "schema"],
       "not": {
         "required": ["path"]
       },
@@ -85,7 +86,7 @@
     },
     "ShowroomResource": {
       "type": "object",
-      "required": ["name", "schema"],
+      "required": ["name", "data", "schema"],
       "not": {
         "required": ["path"]
       },
@@ -96,6 +97,7 @@
         "data": {
           "type": "array",
           "description": "Data items have to conform to the Showroom table schema",
+          "minItems": 1,
           "items": [
             {
               "type": "object"

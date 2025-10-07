@@ -2,15 +2,17 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional, Union
+from typing import Any, Dict, List, Literal, Union
 
 from pydantic import BaseModel, Field, RootModel
 
 
 class CarResource(BaseModel):
     name: Literal['car']
-    data: Optional[List[Dict[str, Any]]] = Field(
-        None, description='Data items have to conform to the Car table schema'
+    data: List[Dict[str, Any]] = Field(
+        ...,
+        description='Data items have to conform to the Car table schema',
+        min_length=1,
     )
     schema_: Literal[
         'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/car.json'
@@ -19,8 +21,8 @@ class CarResource(BaseModel):
 
 class DealerResource(BaseModel):
     name: Literal['dealer']
-    data: Optional[List[Dict[str, Any]]] = Field(
-        None,
+    data: List[Dict[str, Any]] = Field(
+        ...,
         description='Data items have to conform to the Dealer table schema',
         max_length=1,
         min_length=1,
@@ -32,8 +34,10 @@ class DealerResource(BaseModel):
 
 class ShowroomResource(BaseModel):
     name: Literal['showroom']
-    data: Optional[List[Dict[str, Any]]] = Field(
-        None, description='Data items have to conform to the Showroom table schema'
+    data: List[Dict[str, Any]] = Field(
+        ...,
+        description='Data items have to conform to the Showroom table schema',
+        min_length=1,
     )
     schema_: Literal[
         'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/showroom.json'
