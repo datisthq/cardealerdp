@@ -54,7 +54,7 @@
           ]
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/car.json"
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/car.json"
         }
       }
     },
@@ -80,7 +80,7 @@
           ]
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/dealer.json"
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/dealer.json"
         }
       }
     },
@@ -105,7 +105,7 @@
           ]
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/showroom.json"
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/showroom.json"
         }
       }
     }

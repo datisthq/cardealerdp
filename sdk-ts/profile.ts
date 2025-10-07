@@ -14,7 +14,7 @@ export interface CarResource {
    * @minItems 1
    */
   data: [{}]
-  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/car.json"
+  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/car.json"
 }
 export interface DealerResource {
   name: "dealer"
@@ -25,7 +25,7 @@ export interface DealerResource {
    * @maxItems 1
    */
   data: [{}]
-  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/dealer.json"
+  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/dealer.json"
 }
 export interface ShowroomResource {
   name: "showroom"
@@ -35,5 +35,5 @@ export interface ShowroomResource {
    * @minItems 1
    */
   data: [{}]
-  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.1/extension/schemas/showroom.json"
+  schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.2/extension/schemas/showroom.json"
 }
