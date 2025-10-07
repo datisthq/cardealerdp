@@ -26,9 +26,9 @@
     "prepare": "husky",
     "publish:py": "uv --directory sdk-py publish",
     "publish:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
+    "set:version:py": "uv --directory sdk-py version",
+    "set:version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version",
     "start": "pnpm -F extension start",
-    "version:py": "uv --directory sdk-py version",
-    "version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version",
     "test": "pnpm lint && pnpm type",
     "type": "tsc --noEmit"
   },
