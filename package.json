@@ -26,11 +26,11 @@
     "prepare": "husky",
     "publish:py": "uv --directory sdk-py publish",
     "publish:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
-    "set:version:py": "uv --directory sdk-py version",
-    "set:version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version",
     "start": "pnpm -F extension start",
     "test": "pnpm lint && pnpm type",
-    "type": "tsc --noEmit"
+    "type": "tsc --noEmit",
+    "version:py": "uv --directory sdk-py version",
+    "version:ts": "pnpm --include-workspace-root -r exec pnpm version --no-git-tag-version"
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "8.0.6",
