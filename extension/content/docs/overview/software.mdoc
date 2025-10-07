@@ -8,23 +8,31 @@ Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy 
 
 ## Installation
 
-### Python
+{% tabs syncKey="language" %}
+
+{% tabitem label="Python" %}
 
 ```bash
 pip install cardealerdp
 ```
 
-### TypeScript
+{% /tabitem %}
+
+{% tabitem label="TypeScript" %}
 
 ```bash
 npm install cardealerdp
-# or
-yarn add cardealerdp
 ```
+
+{% /tabitem %}
+
+{% /tabs %}
 
 ## Publishing Data
 
-### Python Example
+{% tabs syncKey="language" %}
+
+{% tabitem label="Python" %}
 
 ```python
 from cardealerdp import Package
@@ -111,7 +119,9 @@ with open("dealership.json", "w") as f:
 print("Data package created successfully!")
 ```
 
-### TypeScript Example
+{% /tabitem %}
+
+{% tabitem label="TypeScript" %}
 
 ```typescript
 import type { Package, Car, Dealer, Showroom } from 'cardealerdp';
@@ -197,9 +207,15 @@ writeFileSync("dealership.json", JSON.stringify(dataPackage, null, 2));
 console.log("Data package created successfully!");
 ```
 
+{% /tabitem %}
+
+{% /tabs %}
+
 ## Consuming Data
 
-### Python Example
+{% tabs syncKey="language" %}
+
+{% tabitem label="Python" %}
 
 ```python
 from cardealerdp import Package
@@ -234,7 +250,9 @@ for car in cars:
     print()
 ```
 
-### TypeScript Example
+{% /tabitem %}
+
+{% tabitem label="TypeScript" %}
 
 ```typescript
 import type { Package, Car, Dealer } from 'cardealerdp';
@@ -267,11 +285,17 @@ for (const car of cars) {
 }
 ```
 
+{% /tabitem %}
+
+{% /tabs %}
+
 ## Validation
 
 Both SDKs provide built-in validation to ensure data conforms to the schema.
 
-### Python Validation
+{% tabs syncKey="language" %}
+
+{% tabitem label="Python" %}
 
 ```python
 from cardealerdp.schemas import Car
@@ -288,7 +312,9 @@ except ValidationError as e:
     print(e)
 ```
 
-### TypeScript Validation
+{% /tabitem %}
+
+{% tabitem label="TypeScript" %}
 
 For runtime validation in TypeScript, you can use libraries like [Zod](https://zod.dev/) or [AJV](https://ajv.js.org/) with the JSON schemas:
 
@@ -314,3 +340,7 @@ if (!validate(carData)) {
   console.log("Validation errors:", validate.errors);
 }
 ```
+
+{% /tabitem %}
+
+{% /tabs %}
