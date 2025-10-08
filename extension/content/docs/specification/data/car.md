@@ -200,7 +200,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -230,7 +230,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -565,7 +565,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -584,7 +584,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -603,7 +603,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -622,7 +622,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -652,7 +652,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -671,7 +671,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -690,7 +690,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>
@@ -709,7 +709,7 @@ title: Car
         </ul>
       </td>
       <td>
-        <code>integer</code>
+        <code>number</code>
       </td>
     </tr>
     <tr>

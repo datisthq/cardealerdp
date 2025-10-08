@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel, Field, confloat, conint
+from pydantic import BaseModel, Field, confloat
 
 
 class Car(BaseModel):
@@ -18,10 +18,10 @@ class Car(BaseModel):
         ..., description='The price of the car in the currency specified'
     )
     currency: str = Field(..., description='Currency of the price')
-    year: Optional[conint(ge=1900)] = Field(
+    year: Optional[confloat(ge=1900.0)] = Field(
         None, description='Year of first registration (1900-2100)'
     )
-    mileage: conint(ge=0) = Field(..., description='Odometer reading in kilometers')
+    mileage: confloat(ge=0.0) = Field(..., description='Odometer reading in kilometers')
     brand: str = Field(..., description='Car brand/manufacturer')
     model: str = Field(..., description='Car model name')
     version: str = Field(..., description='Specific version or trim level')
@@ -30,20 +30,20 @@ class Car(BaseModel):
     category: str = Field(..., description='Vehicle category/body type')
     color: str = Field(..., description='Exterior color')
     door: str = Field(..., description='Number of doors identifier')
-    power: Optional[int] = Field(None, description='Engine power in horsepower')
-    cubics: Optional[int] = Field(
+    power: Optional[float] = Field(None, description='Engine power in horsepower')
+    cubics: Optional[float] = Field(
         None, description='Engine displacement in cubic centimeters'
     )
-    seats: Optional[int] = Field(None, description='Number of seats')
-    owners: Optional[int] = Field(None, description='Number of previous owners')
-    month: Optional[conint(ge=1, le=12)] = Field(
+    seats: Optional[float] = Field(None, description='Number of seats')
+    owners: Optional[float] = Field(None, description='Number of previous owners')
+    month: Optional[confloat(ge=1.0, le=12.0)] = Field(
         None, description='Month of first registration (1-12)'
     )
-    warranty: Optional[int] = Field(None, description='Warranty duration in months')
-    range: Optional[int] = Field(
+    warranty: Optional[float] = Field(None, description='Warranty duration in months')
+    range: Optional[float] = Field(
         None, description='Electric vehicle range in kilometers'
     )
-    battery: Optional[int] = Field(
+    battery: Optional[float] = Field(
         None, description='Battery capacity in kWh for electric vehicles'
     )
     plate: Optional[str] = Field(None, description='License plate number')

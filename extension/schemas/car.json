@@ -59,7 +59,7 @@
     },
     {
       "name": "year",
-      "type": "integer",
+      "type": "number",
       "description": "Year of first registration (1900-2100)",
       "examples": [2023],
       "constraints": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "mileage",
-      "type": "integer",
+      "type": "number",
       "description": "Odometer reading in kilometers",
       "examples": [15000],
       "constraints": {
@@ -172,31 +172,31 @@
     },
     {
       "name": "power",
-      "type": "integer",
+      "type": "number",
       "description": "Engine power in horsepower",
       "examples": [283]
     },
     {
       "name": "cubics",
-      "type": "integer",
+      "type": "number",
       "description": "Engine displacement in cubic centimeters",
       "examples": [1998]
     },
     {
       "name": "seats",
-      "type": "integer",
+      "type": "number",
       "description": "Number of seats",
       "examples": [5]
     },
     {
       "name": "owners",
-      "type": "integer",
+      "type": "number",
       "description": "Number of previous owners",
       "examples": [1]
     },
     {
       "name": "month",
-      "type": "integer",
+      "type": "number",
       "description": "Month of first registration (1-12)",
       "examples": [6],
       "constraints": {
@@ -206,19 +206,19 @@
     },
     {
       "name": "warranty",
-      "type": "integer",
+      "type": "number",
       "description": "Warranty duration in months",
       "examples": [24]
     },
     {
       "name": "range",
-      "type": "integer",
+      "type": "number",
       "description": "Electric vehicle range in kilometers",
       "examples": [580]
     },
     {
       "name": "battery",
-      "type": "integer",
+      "type": "number",
       "description": "Battery capacity in kWh for electric vehicles",
       "examples": [75]
     },
