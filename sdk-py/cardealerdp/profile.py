@@ -15,7 +15,7 @@ class CarResource(BaseModel):
         min_length=1,
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.4/extension/schemas/car.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.5/extension/schemas/car.json'
     ] = Field(..., alias='schema')
 
 
@@ -28,7 +28,7 @@ class DealerResource(BaseModel):
         min_length=1,
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.4/extension/schemas/dealer.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.5/extension/schemas/dealer.json'
     ] = Field(..., alias='schema')
 
 
@@ -40,7 +40,7 @@ class ShowroomResource(BaseModel):
         min_length=1,
     )
     schema_: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.4/extension/schemas/showroom.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.5/extension/schemas/showroom.json'
     ] = Field(..., alias='schema')
 
 
@@ -50,7 +50,7 @@ class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
 
 class Package(BaseModel):
     field_schema: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.3/extension/profile.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.5/extension/profile.json'
     ] = Field(..., alias='$schema')
     resources: List[Resource] = Field(..., min_length=1)
 
