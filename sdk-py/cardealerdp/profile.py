@@ -49,6 +49,9 @@ class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
 
 
 class Package(BaseModel):
+    field_schema: Literal[
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.3/extension/profile.json'
+    ] = Field(..., alias='$schema')
     resources: List[Resource] = Field(..., min_length=1)
 
 

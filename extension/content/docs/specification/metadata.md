@@ -5,6 +5,7 @@ title: Metadata
 ## Definitions
 
 - <a id="definitions/Package"></a>**`Package`** *(object)*
+  - <a id="definitions/Package/properties/%24schema"></a>**`$schema`**: Must be: `"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.3/extension/profile.json"`.
   - <a id="definitions/Package/properties/resources"></a>**`resources`** *(array, required)*: Length must be at least 1.
     - <a id="definitions/Package/properties/resources/items"></a>**Items**: Refer to *[#/definitions/Resource](#definitions/Resource)*.
 - <a id="definitions/Resource"></a>**`Resource`**

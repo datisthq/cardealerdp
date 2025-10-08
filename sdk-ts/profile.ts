@@ -4,6 +4,7 @@ export type CarDealerDataPackageProfile = Package
 export type Resource = CarResource | DealerResource | ShowroomResource
 
 export interface Package {
+  $schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.3/extension/profile.json"
   /**
    * @minItems 1
    */

@@ -3,6 +3,7 @@
   "title": "Showroom",
   "description": "A schema describing a car dealer showroom",
   "primaryKey": ["id"],
+  "fieldsMatch": "equal",
   "fields": [
     {
       "name": "id",

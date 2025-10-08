@@ -3,6 +3,7 @@
   "title": "Car",
   "description": "A schema describing a car",
   "primaryKey": ["url"],
+  "fieldsMatch": "equal",
   "foreignKeys": [
     {
       "fields": ["showroomId"],

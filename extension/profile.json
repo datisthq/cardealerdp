@@ -8,8 +8,11 @@
   "definitions": {
     "Package": {
       "type": "object",
-      "required": ["resources"],
+      "required": ["$schema", "resources"],
       "properties": {
+        "$schema": {
+          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.2.3/extension/profile.json"
+        },
         "resources": {
           "type": "array",
           "minItems": 1,
