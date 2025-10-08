@@ -3,7 +3,7 @@
   "title": "Dealer",
   "description": "A schema describing a car dealer",
   "primaryKey": ["url"],
-  "fieldsMatch": "equal",
+  "fieldsMatch": "subset",
   "fields": [
     {
       "name": "title",
