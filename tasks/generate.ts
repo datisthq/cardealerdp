@@ -114,10 +114,19 @@ extension/profile.json
 datamodel-codegen
 --input-file-type jsonschema
 --output sdk-py/${metadata.slug}/profile.py
---output-model-type pydantic_v2.BaseModel
+--output-model-type typing.TypedDict
 --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
+--use-generic-container-types
+--use-field-description
 --disable-timestamp
 `
+
+// It fixes a weird bug of schema -> schema_ conversion
+await replaceInFile({
+  files: [`sdk-py/${metadata.slug}/profile.py`],
+  from: /schema_:/g,
+  to: "schema:",
+})
 
 const pythonIndex: string[] = []
 for (const file of await readdir("extension/schemas")) {
@@ -134,8 +143,10 @@ for (const file of await readdir("extension/schemas")) {
   datamodel-codegen
   --input-file-type jsonschema
   --output sdk-py/${metadata.slug}/schemas/${name}.py
-  --output-model-type pydantic_v2.BaseModel
+  --output-model-type typing.TypedDict
   --custom-file-header '# ruff: noqa -- DO NOT UPDATE this @generated file'
+  --use-generic-container-types
+  --use-field-description
   --disable-timestamp
   `
 }

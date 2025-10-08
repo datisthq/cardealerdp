@@ -2,31 +2,57 @@
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import TypedDict
 
-from pydantic import BaseModel, Field
+from typing_extensions import NotRequired
 
 
-class Showroom(BaseModel):
-    id: str = Field(..., description='Unique identifier for the showroom')
-    title: str = Field(..., description='The name of the showroom')
-    country: str = Field(..., description='Country where the showroom is located')
-    region: str = Field(..., description='State or region within the country')
-    city: str = Field(..., description='Closest city where the showroom is located')
-    address: str = Field(..., description='Street address of the showroom')
-    postcode: Optional[str] = Field(
-        None, description='Postal code of the showroom location'
-    )
-    phone: Optional[str] = Field(
-        None, description='Contact phone number for the showroom'
-    )
-    email: Optional[str] = Field(
-        None, description='Contact email address for the showroom'
-    )
-    url: Optional[str] = Field(None, description='URL to the showroom')
-    lon: Optional[float] = Field(
-        None, description='Longitude coordinate of the showroom location'
-    )
-    lat: Optional[float] = Field(
-        None, description='Latitude coordinate of the showroom location'
-    )
+class Showroom(TypedDict):
+    id: str
+    """
+    Unique identifier for the showroom
+    """
+    title: str
+    """
+    The name of the showroom
+    """
+    country: str
+    """
+    Country where the showroom is located
+    """
+    region: str
+    """
+    State or region within the country
+    """
+    city: str
+    """
+    Closest city where the showroom is located
+    """
+    address: str
+    """
+    Street address of the showroom
+    """
+    postcode: NotRequired[str]
+    """
+    Postal code of the showroom location
+    """
+    phone: NotRequired[str]
+    """
+    Contact phone number for the showroom
+    """
+    email: NotRequired[str]
+    """
+    Contact email address for the showroom
+    """
+    url: NotRequired[str]
+    """
+    URL to the showroom
+    """
+    lon: NotRequired[float]
+    """
+    Longitude coordinate of the showroom location
+    """
+    lat: NotRequired[float]
+    """
+    Latitude coordinate of the showroom location
+    """
