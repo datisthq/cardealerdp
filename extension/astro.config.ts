@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config"
 import starlightChangelogs, {
   makeChangelogsSidebarLinks,
 } from "starlight-changelogs"
+import starlightGitHubAlerts from "starlight-github-alerts"
 import starlightScrollToTop from "starlight-scroll-to-top"
 import metadata from "./package.json" with { type: "json" }
 
@@ -41,7 +42,11 @@ export default defineConfig({
       },
       lastUpdated: true,
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
-      plugins: [starlightScrollToTop(), starlightChangelogs()],
+      plugins: [
+        starlightGitHubAlerts(),
+        starlightScrollToTop(),
+        starlightChangelogs(),
+      ],
       expressiveCode: {
         themes: ["starlight-dark", "starlight-light"],
       },
