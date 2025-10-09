@@ -13,7 +13,7 @@ Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy 
 {% tabitem label="Python" %}
 
 ```bash
-pip install cardealerdp
+pip install cardealerdp frictionless
 ```
 
 {% /tabitem %}
@@ -21,14 +21,14 @@ pip install cardealerdp
 {% tabitem label="TypeScript" %}
 
 ```bash
-npm install cardealerdp
+npm install cardealerdp dpkit
 ```
 
 {% /tabitem %}
 
 {% /tabs %}
 
-## Publishing Data
+## Preparing Data
 
 {% tabs syncKey="language" %}
 
@@ -124,87 +124,67 @@ print("Data package created successfully!")
 {% tabitem label="TypeScript" %}
 
 ```typescript
-import type { Package, Car, Dealer, Showroom } from 'cardealerdp';
-import { writeFileSync } from 'fs';
+import type { Car, Dealer, Package } from "cardealerdp";
+import { savePackageDescriptor } from "dpkit";
 
-// Create dealer information
 const dealer: Dealer = {
-  title: "Premium Auto Sales",
-  country: "United States",
-  region: "California",
-  city: "Los Angeles",
-  address: "1234 Sunset Boulevard",
-  postcode: "90028",
-  phone: "+1-323-555-0100",
-  email: "sales@premiumauto.com",
-  url: "https://www.premiumauto.com",
-  lat: 34.0983,
-  lon: -118.3267
+	title: "Premium Auto Sales",
+	country: "United States",
+	region: "California",
+	city: "Los Angeles",
+	address: "1234 Sunset Boulevard",
+	postcode: "90028",
+	phone: "+1-323-555-0100",
+	email: "sales@premiumauto.com",
+	url: "https://www.premiumauto.com",
+	lat: 34.0983,
+	lon: -118.3267,
 };
 
-// Create car listings
-const cars: Car[] = [
-  {
-    title: "2023 Tesla Model 3 Long Range",
-    url: "https://www.premiumauto.com/cars/tesla-model-3-2023",
-    price: 45990,
-    currency: "USD",
-    year: 2023,
-    mileage: 12000,
-    brand: "Tesla",
-    model: "Model 3",
-    version: "Long Range AWD",
-    fuel: "electric",
-    gearbox: "auto",
-    category: "saloon",
-    color: "white",
-    door: "fourfive",
-    power: 346,
-    seats: 5,
-    range: 358,
-    battery: 75
-  },
-  {
-    title: "2022 BMW X5 xDrive40i",
-    url: "https://www.premiumauto.com/cars/bmw-x5-2022",
-    price: 62500,
-    currency: "USD",
-    year: 2022,
-    mileage: 24500,
-    brand: "BMW",
-    model: "X5",
-    version: "xDrive40i",
-    fuel: "petrol",
-    gearbox: "auto",
-    category: "suv",
-    color: "black",
-    door: "fourfive",
-    power: 335,
-    cubics: 2998,
-    seats: 5
-  }
-];
+const car: Car = {
+	title: "2023 Tesla Model 3 Long Range",
+	url: "https://www.premiumauto.com/cars/tesla-model-3-2023",
+	price: 45990,
+	currency: "USD",
+	year: 2023,
+	mileage: 12000,
+	brand: "Tesla",
+	model: "Model 3",
+	version: "Long Range AWD",
+	fuel: "electric",
+	gearbox: "auto",
+	category: "saloon",
+	color: "white",
+	door: "fourfive",
+	power: 346,
+	seats: 5,
+	range: 358,
+	battery: 75,
+};
 
-// Create the package
 const dataPackage: Package = {
-  resources: [
-    {
-      name: "dealer",
-      schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/dealer.json",
-      data: [dealer]
-    },
-    {
-      name: "car",
-      schema: "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json",
-      data: cars
-    }
-  ]
+	$schema:
+		"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+	resources: [
+		{
+			name: "car",
+			data: [car],
+			schema:
+				"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+		},
+		{
+			name: "dealer",
+			data: [dealer],
+			schema:
+				"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+		},
+	],
 };
 
-// Export to JSON file
-writeFileSync("dealership.json", JSON.stringify(dataPackage, null, 2));
-
-console.log("Data package created successfully!");
+await savePackageDescriptor(dataPackage, {
+	path: "cardealer.json",
+	overwrite: true,
+});
 ```
 
 {% /tabitem %}
