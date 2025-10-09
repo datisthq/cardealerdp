@@ -1,4 +1,3 @@
-import markdoc from "@astrojs/markdoc"
 import starlight from "@astrojs/starlight"
 import { defineConfig } from "astro/config"
 import starlightChangelogs, {
@@ -16,7 +15,6 @@ export default defineConfig({
   srcDir: ".",
   outDir: "build",
   integrations: [
-    markdoc(),
     starlight({
       title: metadata.title,
       description: metadata.description,

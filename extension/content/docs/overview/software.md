@@ -14,7 +14,7 @@ Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy 
 pip install cardealerdp frictionless
 ```
 
-### Preparing Dataset
+### Preparing Data
 
 ```python
 from cardealerdp import Package
@@ -101,7 +101,7 @@ with open("dealership.json", "w") as f:
 print("Data package created successfully!")
 ```
 
-### Consuming Dataset
+### Consuming Data
 
 ```python
 from cardealerdp import Package
@@ -136,7 +136,7 @@ for car in cars:
     print()
 ```
 
-### Validating Dataset
+### Validating Data
 
 ```python
 from cardealerdp.schemas import Car
@@ -161,7 +161,7 @@ except ValidationError as e:
 npm install cardealerdp dpkit
 ```
 
-### Preparing Dataset
+### Publication
 
 ```typescript
 import type { Car, Dealer, Package } from "cardealerdp";
@@ -227,7 +227,16 @@ await savePackageDescriptor(dataPackage, {
 });
 ```
 
-### Consuming Dataset
+### Validation
+
+```typescript
+import { validatePackage } from "dpkit";
+
+const { valid, errors } = await validatePackage("cardealer.json");
+console.log(valid, errors);
+```
+
+### Consumption
 
 ```typescript
 import type { Package, Car, Dealer } from 'cardealerdp';
@@ -260,35 +269,8 @@ for (const car of cars) {
 }
 ```
 
-### Validating Dataset
-
-For runtime validation in TypeScript, you can use libraries like [Zod](https://zod.dev/) or [AJV](https://ajv.js.org/) with the JSON schemas:
-
-```typescript
-import Ajv from 'ajv';
-import type { Car } from 'cardealerdp';
-
-const ajv = new Ajv();
-
-// Fetch the car schema
-const carSchemaUrl = "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json";
-
-// Validate car data
-const validate = ajv.compile(carSchema);
-
-const carData: Partial<Car> = {
-  title: "2023 Tesla Model 3",
-  url: "https://example.com/car"
-  // Missing required fields
-};
-
-if (!validate(carData)) {
-  console.log("Validation errors:", validate.errors);
-}
-```
-
 ## Command-Line
 
-### Consuming Dataset
+### Consuming Data
 
-### Validating Dataset
+### Validating Data
