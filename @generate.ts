@@ -4,10 +4,10 @@ import { intro, spinner } from "@clack/prompts"
 import { execa } from "execa"
 import pc from "picocolors"
 import { replaceInFile } from "replace-in-file"
-import metadata from "../package.json" with { type: "json" }
+import metadata from "./package.json" with { type: "json" }
 
 const loader = spinner()
-const root = join(import.meta.dirname, "..")
+const root = join(import.meta.dirname)
 const [owner, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
 
 const $ = execa({

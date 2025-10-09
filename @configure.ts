@@ -5,7 +5,7 @@ import pc from "picocolors"
 import { remark } from "remark"
 import { replaceInFile } from "replace-in-file"
 import TOML from "smol-toml"
-import metadata from "../package.json" with { type: "json" }
+import metadata from "./package.json" with { type: "json" }
 
 const loader = spinner()
 intro(pc.bold("Configuring the extension..."))

@@ -10,7 +10,7 @@ from typing_extensions import NotRequired
 class Car(TypedDict):
     showroomId: NotRequired[str]
     """
-    Unique identifier for the showroom where the car is located. If not provided the car is located at the dealers's main address
+    Unique identifier for the showroom where the car is located. If not provided the car is considered located at the dealers's main address
     """
     title: str
     """
