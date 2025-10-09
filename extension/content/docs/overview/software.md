@@ -4,9 +4,13 @@ sidebar:
   order: 2
 ---
 
-Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume car dealership data packages.
+Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume Car Dealer Data Packages.
 
 ## Python
+
+:::note
+In addition to the Python SDK, we recommend using [frictionless-py](https://framework.frictionlessdata.io/) to manage your data packages. For example, using it you can publish your data pacakge directory to Zenodo instead of saving it locally, as well, as consume it from a remote server.
+:::
 
 ### Installation
 
@@ -14,11 +18,11 @@ Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy 
 pip install cardealerdp frictionless
 ```
 
-### Preparing Data
+### Publication
 
 ```python
-from cardealerdp import Package
-from cardealerdp.schemas import Car, Dealer, Showroom
+from cardealerdp import Package, Car, Dealer
+import frictionless
 
 # Create dealer information
 dealer = Dealer(
@@ -32,128 +36,75 @@ dealer = Dealer(
     email="sales@premiumauto.com",
     url="https://www.premiumauto.com",
     lat=34.0983,
-    lon=-118.3267
+    lon=-118.3267,
 )
 
 # Create car listings
-cars = [
-    Car(
-        title="2023 Tesla Model 3 Long Range",
-        url="https://www.premiumauto.com/cars/tesla-model-3-2023",
-        price=45990,
-        currency="USD",
-        year=2023,
-        mileage=12000,
-        brand="Tesla",
-        model="Model 3",
-        version="Long Range AWD",
-        fuel="electric",
-        gearbox="auto",
-        category="saloon",
-        color="white",
-        door="fourfive",
-        power=346,
-        seats=5,
-        range=358,
-        battery=75
-    ),
-    Car(
-        title="2022 BMW X5 xDrive40i",
-        url="https://www.premiumauto.com/cars/bmw-x5-2022",
-        price=62500,
-        currency="USD",
-        year=2022,
-        mileage=24500,
-        brand="BMW",
-        model="X5",
-        version="xDrive40i",
-        fuel="petrol",
-        gearbox="auto",
-        category="suv",
-        color="black",
-        door="fourfive",
-        power=335,
-        cubics=2998,
-        seats=5
-    )
-]
-
-# Create the package
-package = Package(
-    resources=[
-        {
-            "name": "dealer",
-            "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/dealer.json",
-            "data": [dealer.model_dump()]
-        },
-        {
-            "name": "car",
-            "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.1.0/extension/schemas/car.json",
-            "data": [car.model_dump() for car in cars]
-        }
-    ]
+car = Car(
+    title="2023 Tesla Model 3 Long Range",
+    url="https://www.premiumauto.com/cars/tesla-model-3-2023",
+    price=45990,
+    currency="USD",
+    year=2023,
+    mileage=12000,
+    brand="Tesla",
+    model="Model 3",
+    version="Long Range AWD",
+    fuel="electric",
+    gearbox="auto",
+    category="saloon",
+    color="white",
+    door="fourfive",
+    power=346,
+    seats=5,
+    range=358,
+    battery=75,
 )
 
-# Export to JSON file
-with open("dealership.json", "w") as f:
-    f.write(package.model_dump_json(indent=2, by_alias=True))
+package = Package(
+    {
+        "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+        "resources": [
+            {
+                "name": "car",
+                "data": [car],
+                "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+            },
+            {
+                "name": "dealer",
+                "data": [dealer],
+                "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+            },
+        ],
+    }
+)
 
-print("Data package created successfully!")
+frictionless.Package(package).to_json("cardealer.json")
 ```
 
-### Consuming Data
+### Validation
 
 ```python
-from cardealerdp import Package
-from cardealerdp.schemas import Car, Dealer
-import json
+import frictionless
 
-# Load the data package
-with open("dealership.json", "r") as f:
-    data = json.load(f)
-    package = Package(**data)
-
-# Access dealer information
-dealer_resource = next(r for r in package.resources if r.root.name == "dealer")
-dealer_data = dealer_resource.root.data[0]
-dealer = Dealer(**dealer_data)
-
-print(f"Dealer: {dealer.title}")
-print(f"Location: {dealer.city}, {dealer.region}")
-print(f"Website: {dealer.url}")
-print()
-
-# Access car listings
-car_resource = next(r for r in package.resources if r.root.name == "car")
-cars = [Car(**car_data) for car_data in car_resource.root.data]
-
-print(f"Available Cars: {len(cars)}")
-for car in cars:
-    print(f"- {car.title}")
-    print(f"  Price: ${car.price:,} {car.currency}")
-    print(f"  Year: {car.year}, Mileage: {car.mileage:,} km")
-    print(f"  Fuel: {car.fuel}, Gearbox: {car.gearbox}")
-    print()
+report = frictionless.validate("cardealer.json")
+print(report)
 ```
 
-### Validating Data
+### Consumption
 
 ```python
-from cardealerdp.schemas import Car
-from pydantic import ValidationError
+import frictionless
 
-try:
-    # This will fail validation - missing required fields
-    invalid_car = Car(
-        title="2023 Tesla Model 3",
-        url="https://example.com/car"
-    )
-except ValidationError as e:
-    print("Validation error:")
-    print(e)
+package = frictionless.Package("cardealer.json")
+print(package)
 ```
 
 ## TypeScript
+
+:::note
+In addition to the TypeScript SDK, we recommend using [dpkit](https://dpkit.dev/) to manage your data packages. For example, using it you can publish your data pacakge directory to Zenodo instead of saving it locally, as well, as consumte it from a remote server.
+:::
 
 ### Installation
 
@@ -239,38 +190,33 @@ console.log(valid, errors);
 ### Consumption
 
 ```typescript
-import type { Package, Car, Dealer } from 'cardealerdp';
-import { readFileSync } from 'fs';
+import { loadPackageDescriptor } from "dpkit";
 
-// Load the data package
-const rawData = readFileSync("dealership.json", "utf-8");
-const dataPackage: Package = JSON.parse(rawData);
-
-// Access dealer information
-const dealerResource = dataPackage.resources?.find(r => r.name === "dealer");
-const dealer = dealerResource?.data?.[0] as Dealer;
-
-console.log(`Dealer: ${dealer.title}`);
-console.log(`Location: ${dealer.city}, ${dealer.region}`);
-console.log(`Website: ${dealer.url}`);
-console.log();
-
-// Access car listings
-const carResource = dataPackage.resources?.find(r => r.name === "car");
-const cars = (carResource?.data || []) as Car[];
-
-console.log(`Available Cars: ${cars.length}`);
-for (const car of cars) {
-  console.log(`- ${car.title}`);
-  console.log(`  Price: $${car.price.toLocaleString()} ${car.currency}`);
-  console.log(`  Year: ${car.year}, Mileage: ${car.mileage.toLocaleString()} km`);
-  console.log(`  Fuel: ${car.fuel}, Gearbox: ${car.gearbox}`);
-  console.log();
-}
+const dataPackage = await loadPackageDescriptor("cardealer.json");
+console.log(dataPackage);
 ```
 
 ## Command-Line
 
-### Consuming Data
+:::note
+As an alternative to [dpkit](https://dpkit.dev/), you can use [frictionless-py](https://framework.frictionlessdata.io/) to manage your data packages in Command-Line.
+:::
 
-### Validating Data
+### Installation
+
+```bash
+curl -fsSL https://dpkit.dev/install.sh | sh
+```
+
+
+### Validation
+
+```bash
+./dp package validate cardealer.json
+```
+
+### Consumption
+
+```bash
+./dp table expore -p cardealer.json
+```
