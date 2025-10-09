@@ -23,13 +23,14 @@ Here you can find the guidelines for contributing to the extension. We welcome a
 
 ### Getting Started
 
-Start by cloning the repository or its fork, installing the dependencies, and configuring the extension:
+Start by cloning the repository or its fork, installing the dependencies, configuring the extension, and starting the site:
 
 ```bash
 git clone https://github.com/datisthq/cardealerdp.git
 cd cardealerdp
 pnpm install
 pnpm configure
+pnpm start
 ```
 
 ### Managing the Project
@@ -37,6 +38,7 @@ pnpm configure
 - **`pnpm install`** - Install dependencies
 - **`pnpm configure`** - Configure extension metadata (slug, title, description, etc.)
 - **`pnpm generate`** - Generate TypeScript and Python SDKs from schemas
+- **`pnpm format`** - Format the project files to consistent style
 - **`pnpm start`** - Start the documentation site in development mode
 - **`pnpm test`** - Verify project integrity
 
