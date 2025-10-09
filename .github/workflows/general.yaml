@@ -31,9 +31,42 @@ jobs:
       - name: Test Packages
         run: pnpm test
 
-  deploy:
-    if: github.event_name == 'push'
+  release:
+    needs: [test]
+    environment: release
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+      - name: Setup Uv
+        uses: astral-sh/setup-uv@v6
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: package.json
+      - name: Install Dependencies
+        run: pnpm install:ci
+      - name: Release Extension
+        uses: cycjimmy/semantic-release-action@v5
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    needs: [release]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
 
     environment:
       name: github-pages
@@ -66,35 +99,3 @@ jobs:
       - name: Deploy Site
         id: deployment
         uses: actions/deploy-pages@v4
-
-  release:
-    needs: [test]
-    environment: release
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push'
-
-    permissions:
-      id-token: write
-      contents: write
-      issues: write
-      pull-requests: write
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v5
-      - name: Setup Uv
-        uses: astral-sh/setup-uv@v6
-      - name: Setup Pnpm
-        uses: pnpm/action-setup@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          cache: pnpm
-          node-version-file: package.json
-      - name: Install Dependencies
-        run: pnpm install:ci
-      - name: Release Extension
-        uses: cycjimmy/semantic-release-action@v5
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
