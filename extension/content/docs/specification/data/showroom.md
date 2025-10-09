@@ -29,7 +29,7 @@ title: Showroom
         </code>
       </td>
       <td>
-        <p>Unique identifier for the showroom</p>
+        <p>Unique identifier of the showroom</p>
         <strong>Constraints</strong>
         <ul>
           <li>

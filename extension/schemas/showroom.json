@@ -8,7 +8,7 @@
     {
       "name": "id",
       "type": "string",
-      "description": "Unique identifier for the showroom",
+      "description": "Unique identifier of the showroom",
       "examples": ["showroom-downtown-123"],
       "constraints": {
         "required": true

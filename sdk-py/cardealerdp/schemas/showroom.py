@@ -10,7 +10,7 @@ from typing_extensions import NotRequired
 class Showroom(TypedDict):
     id: str
     """
-    Unique identifier for the showroom
+    Unique identifier of the showroom
     """
     title: str
     """

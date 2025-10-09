@@ -5,7 +5,7 @@
  */
 export interface Showroom {
   /**
-   * Unique identifier for the showroom
+   * Unique identifier of the showroom
    */
   id: string
   /**
