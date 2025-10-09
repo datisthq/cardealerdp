@@ -48,7 +48,7 @@ The fiels you need to edit to update the extension:
 - **extension/content/docs/index.mdx** - Edit the homepage
 - **extension/content/docs/overview/** - Edit not generated documentation pages
 
-The rest of the files are generic or generated and should not be edited directly unless you want a more granular control over the extension workflow.
+The rest of the files are generic or generated and should not be edited directly unless you want a more granular control over the extension development.
 
 ### Generating SDKs
 
