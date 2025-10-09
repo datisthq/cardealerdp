@@ -6,33 +6,15 @@ sidebar:
 
 Cardealer DP provides SDKs for Python and TypeScript/JavaScript to make it easy to publish and consume car dealership data packages.
 
-## Installation
+## Python
 
-{% tabs syncKey="language" %}
-
-{% tabitem label="Python" %}
+### Installation
 
 ```bash
 pip install cardealerdp frictionless
 ```
 
-{% /tabitem %}
-
-{% tabitem label="TypeScript" %}
-
-```bash
-npm install cardealerdp dpkit
-```
-
-{% /tabitem %}
-
-{% /tabs %}
-
-## Preparing Data
-
-{% tabs syncKey="language" %}
-
-{% tabitem label="Python" %}
+### Preparing Dataset
 
 ```python
 from cardealerdp import Package
@@ -119,9 +101,67 @@ with open("dealership.json", "w") as f:
 print("Data package created successfully!")
 ```
 
-{% /tabitem %}
+### Consuming Dataset
 
-{% tabitem label="TypeScript" %}
+```python
+from cardealerdp import Package
+from cardealerdp.schemas import Car, Dealer
+import json
+
+# Load the data package
+with open("dealership.json", "r") as f:
+    data = json.load(f)
+    package = Package(**data)
+
+# Access dealer information
+dealer_resource = next(r for r in package.resources if r.root.name == "dealer")
+dealer_data = dealer_resource.root.data[0]
+dealer = Dealer(**dealer_data)
+
+print(f"Dealer: {dealer.title}")
+print(f"Location: {dealer.city}, {dealer.region}")
+print(f"Website: {dealer.url}")
+print()
+
+# Access car listings
+car_resource = next(r for r in package.resources if r.root.name == "car")
+cars = [Car(**car_data) for car_data in car_resource.root.data]
+
+print(f"Available Cars: {len(cars)}")
+for car in cars:
+    print(f"- {car.title}")
+    print(f"  Price: ${car.price:,} {car.currency}")
+    print(f"  Year: {car.year}, Mileage: {car.mileage:,} km")
+    print(f"  Fuel: {car.fuel}, Gearbox: {car.gearbox}")
+    print()
+```
+
+### Validating Dataset
+
+```python
+from cardealerdp.schemas import Car
+from pydantic import ValidationError
+
+try:
+    # This will fail validation - missing required fields
+    invalid_car = Car(
+        title="2023 Tesla Model 3",
+        url="https://example.com/car"
+    )
+except ValidationError as e:
+    print("Validation error:")
+    print(e)
+```
+
+## TypeScript
+
+### Installation
+
+```bash
+npm install cardealerdp dpkit
+```
+
+### Preparing Dataset
 
 ```typescript
 import type { Car, Dealer, Package } from "cardealerdp";
@@ -187,52 +227,7 @@ await savePackageDescriptor(dataPackage, {
 });
 ```
 
-{% /tabitem %}
-
-{% /tabs %}
-
-## Consuming Data
-
-{% tabs syncKey="language" %}
-
-{% tabitem label="Python" %}
-
-```python
-from cardealerdp import Package
-from cardealerdp.schemas import Car, Dealer
-import json
-
-# Load the data package
-with open("dealership.json", "r") as f:
-    data = json.load(f)
-    package = Package(**data)
-
-# Access dealer information
-dealer_resource = next(r for r in package.resources if r.root.name == "dealer")
-dealer_data = dealer_resource.root.data[0]
-dealer = Dealer(**dealer_data)
-
-print(f"Dealer: {dealer.title}")
-print(f"Location: {dealer.city}, {dealer.region}")
-print(f"Website: {dealer.url}")
-print()
-
-# Access car listings
-car_resource = next(r for r in package.resources if r.root.name == "car")
-cars = [Car(**car_data) for car_data in car_resource.root.data]
-
-print(f"Available Cars: {len(cars)}")
-for car in cars:
-    print(f"- {car.title}")
-    print(f"  Price: ${car.price:,} {car.currency}")
-    print(f"  Year: {car.year}, Mileage: {car.mileage:,} km")
-    print(f"  Fuel: {car.fuel}, Gearbox: {car.gearbox}")
-    print()
-```
-
-{% /tabitem %}
-
-{% tabitem label="TypeScript" %}
+### Consuming Dataset
 
 ```typescript
 import type { Package, Car, Dealer } from 'cardealerdp';
@@ -265,36 +260,7 @@ for (const car of cars) {
 }
 ```
 
-{% /tabitem %}
-
-{% /tabs %}
-
-## Validation
-
-Both SDKs provide built-in validation to ensure data conforms to the schema.
-
-{% tabs syncKey="language" %}
-
-{% tabitem label="Python" %}
-
-```python
-from cardealerdp.schemas import Car
-from pydantic import ValidationError
-
-try:
-    # This will fail validation - missing required fields
-    invalid_car = Car(
-        title="2023 Tesla Model 3",
-        url="https://example.com/car"
-    )
-except ValidationError as e:
-    print("Validation error:")
-    print(e)
-```
-
-{% /tabitem %}
-
-{% tabitem label="TypeScript" %}
+### Validating Dataset
 
 For runtime validation in TypeScript, you can use libraries like [Zod](https://zod.dev/) or [AJV](https://ajv.js.org/) with the JSON schemas:
 
@@ -321,6 +287,8 @@ if (!validate(carData)) {
 }
 ```
 
-{% /tabitem %}
+## Command-Line
 
-{% /tabs %}
+### Consuming Dataset
+
+### Validating Dataset
