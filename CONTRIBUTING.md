@@ -13,8 +13,8 @@ Here you can find the guidelines for contributing to the extension. We welcome a
   - Python 3.12+ (with uv) - [How to Install](https://docs.astral.sh/uv/getting-started/installation)
 - **Releasing**:
   - Configured a pending trusted publisher on [PyPI](https://pypi.org/manage/account/publishing/) matching the extension name (slug)
-  - Created a publishing access token on [NPM](https://www.npmjs.com/settings/roll/tokens) that is added on [Github](https://github.com/datisthq/extensiondp/settings/secrets/actions) as a repository secret called `NPM_TOKEN`
-  - Switch Github Pages publishing source on [GitHub](https://github.com/datisthq/extensiondp/settings/pages) to `Github Actions`.
+  - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens) that is added on [Github](https://github.com/datisthq/extensiondp/settings/secrets/actions) as a repository secret called `NPM_TOKEN`
+  - Update the publishing source on [GitHub](https://github.com/datisthq/cardealerdp/settings/pages) to `Github Actions`.
 
 ## Development
 
