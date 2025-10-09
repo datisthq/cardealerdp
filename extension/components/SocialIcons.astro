@@ -3,13 +3,13 @@ import Default from "@astrojs/starlight/components/SocialIcons.astro"
 import metadata from "../package.json" with { type: "json" }
 
 const { origin, hostname, pathname } = new URL(metadata.homepage)
-const basedir = import.meta.env.PROD ? pathname : "/"
+const basedir = import.meta.env.PROD ? pathname : ""
 
 // It's an example of component customization
 // https://starlight.astro.build/guides/overriding-components
 ---
 
-<a href={`${basedir}changelog`} style="text-decoration: none">
+<a href={`${basedir}/changelog`} style="text-decoration: none">
   <strong>v{metadata.version} (current)</strong>
 </a>
 
