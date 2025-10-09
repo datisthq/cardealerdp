@@ -101,7 +101,9 @@ if (title || description || repository) {
             break
           }
         }
+      }
 
+      for (const node of tree.children) {
         if (description) {
           if (node.type === "paragraph") {
             const textNode = node.children[0]
