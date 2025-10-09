@@ -141,8 +141,12 @@ if (title || description || repository) {
 
   await replaceInFile({
     files: ["extension/package.json", "sdk-ts/package.json", "package.json"],
-    processor: source => {
+    processor: (source, file) => {
       const data = JSON.parse(source) as any
+
+      if (file.includes("sdk-ts")) {
+        if (slug) data.name = slug
+      }
 
       if (slug) data.slug = slug
       if (title) data.title = title
@@ -161,6 +165,7 @@ if (title || description || repository) {
     processor: source => {
       const data = TOML.parse(source) as any
 
+      if (slug) data.project.name = slug
       if (slug) data.project.slug = slug
       if (title) data.project.title = title
       if (description) data.project.description = description
