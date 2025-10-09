@@ -218,5 +218,5 @@ curl -fsSL https://dpkit.dev/install.sh | sh
 ### Consumption
 
 ```bash
-./dp table expore -p cardealer.json
+./dp table explore -p cardealer.json
 ```
