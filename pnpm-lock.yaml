@@ -78,14 +78,14 @@ importers:
         specifier: 0.34.2
         version: 0.34.2
       starlight-changelogs:
-        specifier: 0.1.1
-        version: 0.1.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
+        specifier: 0.2.1
+        version: 0.2.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
       starlight-github-alerts:
         specifier: 0.1.0
         version: 0.1.0(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))
       starlight-scroll-to-top:
-        specifier: 0.3.1
-        version: 0.3.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))
+        specifier: 0.4.0
+        version: 0.4.0(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))
 
   sdk-ts:
     dependencies:
@@ -3411,8 +3411,8 @@ packages:
     resolution: {integrity: sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==}
     engines: {node: '>=10'}
 
-  starlight-changelogs@0.1.1:
-    resolution: {integrity: sha512-Upq5VMuzNiVbXHJLVTOpsaqJ14YykCefg5fhT+KdidxfG3Rd4M5kD53G2OIPxqQS0f/x6xWSdD1ORjgnKyLWeA==}
+  starlight-changelogs@0.2.1:
+    resolution: {integrity: sha512-fy76e1bDicxHO/AkcqVqkkHnIMuXlWNvUops0ypF6gGErIZaHR0QHDrYrETJbUFIQCF5M6l6OD7NUl3VRGJBEw==}
     engines: {node: '>=18.17.1'}
     peerDependencies:
       '@astrojs/starlight': '>=0.35.0'
@@ -3423,8 +3423,8 @@ packages:
     peerDependencies:
       '@astrojs/starlight': '>=0.35.0'
 
-  starlight-scroll-to-top@0.3.1:
-    resolution: {integrity: sha512-/RTpJKEjhyn9sE+d5FqQMkJyAzb2xy7e63dGdHPaG9/mFuHKYMriRoTiUGwBYMw3P5xlRJdn5RLkv3ZBOudbvA==}
+  starlight-scroll-to-top@0.4.0:
+    resolution: {integrity: sha512-lxsW5Sv+oKCI8CYZQ6Ue957cExiHMozK73LmmbsvpBKWryW+AKU4OXmX/1bTQNx+mVLZcpm2qTwKa1KX5VdEaQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       '@astrojs/starlight': '>=0.35'
@@ -7993,7 +7993,7 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  starlight-changelogs@0.1.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)):
+  starlight-changelogs@0.2.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)))(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2)):
     dependencies:
       '@ascorbic/loader-utils': 1.0.2(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
       '@astrojs/starlight': 0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
@@ -8011,7 +8011,7 @@ snapshots:
       '@astrojs/starlight': 0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
       unist-util-visit: 5.0.0
 
-  starlight-scroll-to-top@0.3.1(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))):
+  starlight-scroll-to-top@0.4.0(@astrojs/starlight@0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))):
     dependencies:
       '@astrojs/starlight': 0.36.0(astro@5.14.1(@types/node@24.5.2)(rollup@4.52.3)(typescript@5.9.2))
 
