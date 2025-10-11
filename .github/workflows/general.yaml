@@ -57,6 +57,8 @@ jobs:
           node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install:ci
+      - name: Login to Npm
+        run: pnpm login:ci
       - name: Release Extension
         uses: cycjimmy/semantic-release-action@v5
         env:
