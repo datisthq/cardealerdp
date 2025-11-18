@@ -39,6 +39,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && !contains(github.ref, 'refs/tags/')
 
+    outputs:
+      created: ${{ steps.release.outputs.new_release_published }}
+      version: ${{ steps.release.outputs.new_release_version }}
+
     permissions:
       id-token: write
       contents: write
@@ -63,14 +67,15 @@ jobs:
         run: pnpm login:ci
       - name: Release Extension
         uses: cycjimmy/semantic-release-action@v5
+        id: release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    needs: [test]
+    needs: [release]
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    if: github.event_name == 'push'
 
     environment:
       name: github-pages
@@ -94,6 +99,12 @@ jobs:
           node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install:ci
+      - name: Set Version
+        if: needs.release.outputs.created == 'true'
+        run: pnpm /version/ ${{ needs.release.outputs.version }}
+      - name: Generate Packages
+        if: needs.release.outputs.created == 'true'
+        run: pnpm generate
       - name: Build Site
         run: pnpm -F extension build
       - name: Upload Site
