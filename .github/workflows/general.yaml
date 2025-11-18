@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - v*.*.*
   pull_request:
     branches:
       - main
@@ -35,7 +37,7 @@ jobs:
     needs: [test]
     environment: release
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && !contains(github.ref, 'refs/tags/')
 
     permissions:
       id-token: write
@@ -66,9 +68,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    needs: [release]
+    needs: [test]
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
 
     environment:
       name: github-pages
