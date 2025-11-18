@@ -12,7 +12,7 @@ class CarResource(TypedDict):
     Data items have to conform to the Car table schema
     """
     schema: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.2/extension/schemas/car.json'
     ]
 
 
@@ -23,7 +23,7 @@ class DealerResource(TypedDict):
     Data items have to conform to the Dealer table schema
     """
     schema: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.2/extension/schemas/dealer.json'
     ]
 
 
@@ -34,7 +34,7 @@ class ShowroomResource(TypedDict):
     Data items have to conform to the Showroom table schema
     """
     schema: Literal[
-        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/showroom.json'
+        'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.2/extension/schemas/showroom.json'
     ]
 
 
@@ -45,7 +45,7 @@ Package = TypedDict(
     'Package',
     {
         '$schema': Literal[
-            'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json'
+            'https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.2/extension/profile.json'
         ],
         'resources': Sequence[Resource],
     },
