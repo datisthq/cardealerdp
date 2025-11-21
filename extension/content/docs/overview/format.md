@@ -25,21 +25,21 @@ A Cardealer DP file is a JSON document that follows the Data Package specificati
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/<version>/extension/profile.json",
+  "$schema": "https://datisthq.github.io/cardealerdp/extension/<version>/profile.json",
   "resources": [
     {
       "name": "car",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/<version>/extension/schemas/car.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/<version>/schemas/car.json",
       "data": [{...}, {...}, {...}]
     },
     {
       "name": "dealer",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/<version>/extension/schemas/dealer.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/<version>/schemas/dealer.json",
       "data": [{...}]
     },
     {
       "name": "showroom",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/<version>/extension/schemas/showroom.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/<version>/schemas/showroom.json",
       "data": [{...}, {...}]
     }
   ]

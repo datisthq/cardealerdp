@@ -62,17 +62,17 @@ car = Car(
 
 package = Package(
     {
-        "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+        "$schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json",
         "resources": [
             {
                 "name": "car",
                 "data": [car],
-                "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+                "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json",
             },
             {
                 "name": "dealer",
                 "data": [dealer],
-                "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+                "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json",
             },
         ],
     }
@@ -153,19 +153,19 @@ const car: Car = {
 
 const dataPackage: Package = {
 	$schema:
-		"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+		"https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json",
 	resources: [
 		{
 			name: "car",
 			data: [car],
 			schema:
-				"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+				"https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json",
 		},
 		{
 			name: "dealer",
 			data: [dealer],
 			schema:
-				"https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+				"https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json",
 		},
 	],
 };

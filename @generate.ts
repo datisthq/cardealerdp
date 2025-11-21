@@ -8,7 +8,6 @@ import metadata from "./package.json" with { type: "json" }
 
 const loader = spinner()
 const root = join(import.meta.dirname)
-const [owner, repo] = new URL(metadata.repository).pathname.split("/").slice(1)
 
 const $ = execa({
   cwd: root,
@@ -25,14 +24,14 @@ loader.start("Updating extension")
 
 await replaceInFile({
   files: "extension/profile.json",
-  from: /githubusercontent.*profile/g,
-  to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/extension/profile`,
+  from: /extension.*profile/g,
+  to: `extension/v${metadata.version}/profile`,
 })
 
 await replaceInFile({
   files: "extension/profile.json",
-  from: /githubusercontent.*schemas/g,
-  to: `githubusercontent.com/${owner}/${repo}/v${metadata.version}/extension/schemas`,
+  from: /extension.*schemas/g,
+  to: `extension/v${metadata.version}/schemas`,
 })
 
 await $`

@@ -12,11 +12,11 @@ A basic example with a single dealer location and two car listings. When no show
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+  "$schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json",
       "data": [
         {
           "title": "Premium Auto Sales",
@@ -35,7 +35,7 @@ A basic example with a single dealer location and two car listings. When no show
     },
     {
       "name": "car",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json",
       "data": [
         {
           "title": "2023 Tesla Model 3 Long Range",
@@ -88,11 +88,11 @@ A dealer with a main location and additional showrooms, with cars distributed ac
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+  "$schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json",
       "data": [
         {
           "title": "Elite Motors Group",
@@ -111,7 +111,7 @@ A dealer with a main location and additional showrooms, with cars distributed ac
     },
     {
       "name": "showroom",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/showroom.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/showroom.json",
       "data": [
         {
           "id": "showroom-downtown-sf",
@@ -145,7 +145,7 @@ A dealer with a main location and additional showrooms, with cars distributed ac
     },
     {
       "name": "car",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json",
       "data": [
         {
           "showroomId": "showroom-downtown-sf",
@@ -221,11 +221,11 @@ A minimal valid Cardealer DP file with only required fields.
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/profile.json",
+  "$schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/dealer.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json",
       "data": [
         {
           "title": "Quick Auto Sales",
@@ -239,7 +239,7 @@ A minimal valid Cardealer DP file with only required fields.
     },
     {
       "name": "car",
-      "schema": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.1/extension/schemas/car.json",
+      "schema": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json",
       "data": [
         {
           "title": "2021 Honda Civic LX",

@@ -11,7 +11,7 @@
       "required": ["$schema", "resources"],
       "properties": {
         "$schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.3/extension/profile.json"
+          "const": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/profile.json"
         },
         "resources": {
           "type": "array",
@@ -54,7 +54,7 @@
           }
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.3/extension/schemas/car.json"
+          "const": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/car.json"
         }
       }
     },
@@ -78,7 +78,7 @@
           }
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.3/extension/schemas/dealer.json"
+          "const": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/dealer.json"
         }
       }
     },
@@ -101,7 +101,7 @@
           }
         },
         "schema": {
-          "const": "https://raw.githubusercontent.com/datisthq/cardealerdp/v0.3.3/extension/schemas/showroom.json"
+          "const": "https://datisthq.github.io/cardealerdp/extension/v0.3.3/schemas/showroom.json"
         }
       }
     }
