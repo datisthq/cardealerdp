@@ -1,0 +1,238 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Car",
+  "description": "A schema describing a car",
+  "primaryKey": ["url"],
+  "fieldsMatch": "equal",
+  "foreignKeys": [
+    {
+      "fields": ["showroomId"],
+      "reference": {
+        "resource": "showroom",
+        "fields": ["id"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "name": "showroomId",
+      "type": "string",
+      "description": "Unique identifier for the showroom where the car is located. If not provided the car is considered located at the dealers's main address",
+      "examples": ["showroom-downtown-123"]
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "The title or name of the car listing",
+      "examples": ["2023 Tesla Model 3 Long Range"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "URL to the car listing",
+      "examples": ["https://example.com/cars/tesla-model-3-2023"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "description": "The price of the car in the currency specified",
+      "examples": [45990],
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "description": "Currency of the price",
+      "examples": ["EUR"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "year",
+      "type": "number",
+      "description": "Year of first registration (1900-2100)",
+      "examples": [2023],
+      "constraints": {
+        "minimum": 1900
+      }
+    },
+    {
+      "name": "mileage",
+      "type": "number",
+      "description": "Odometer reading in kilometers",
+      "examples": [15000],
+      "constraints": {
+        "required": true,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "brand",
+      "type": "string",
+      "description": "Car brand/manufacturer",
+      "examples": ["Tesla"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "model",
+      "type": "string",
+      "description": "Car model name",
+      "examples": ["Model 3"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "Specific version or trim level",
+      "examples": ["Long Range AWD"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "fuel",
+      "type": "string",
+      "description": "Fuel type",
+      "examples": ["electric", "petrol"],
+      "categories": ["diesel", "petrol", "hybrid", "electric"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "gearbox",
+      "type": "string",
+      "description": "Transmission type",
+      "examples": ["auto", "manual"],
+      "categories": ["manual", "auto"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "description": "Vehicle category/body type",
+      "examples": ["suv", "estate", "sport"],
+      "categories": [
+        "small",
+        "estate",
+        "saloon",
+        "suv",
+        "van",
+        "sport",
+        "cabrio"
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "description": "Exterior color",
+      "examples": ["white", "black", "blue"],
+      "categories": [
+        "grey",
+        "black",
+        "white",
+        "blue",
+        "red",
+        "green",
+        "yellow",
+        "orange"
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "door",
+      "type": "string",
+      "description": "Number of doors identifier",
+      "examples": ["fourfive", "twothree"],
+      "categories": ["twothree", "fourfive", "sixseven"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "power",
+      "type": "number",
+      "description": "Engine power in horsepower",
+      "examples": [283]
+    },
+    {
+      "name": "cubics",
+      "type": "number",
+      "description": "Engine displacement in cubic centimeters",
+      "examples": [1998]
+    },
+    {
+      "name": "seats",
+      "type": "number",
+      "description": "Number of seats",
+      "examples": [5]
+    },
+    {
+      "name": "owners",
+      "type": "number",
+      "description": "Number of previous owners",
+      "examples": [1]
+    },
+    {
+      "name": "month",
+      "type": "number",
+      "description": "Month of first registration (1-12)",
+      "examples": [6],
+      "constraints": {
+        "minimum": 1,
+        "maximum": 12
+      }
+    },
+    {
+      "name": "warranty",
+      "type": "number",
+      "description": "Warranty duration in months",
+      "examples": [24]
+    },
+    {
+      "name": "range",
+      "type": "number",
+      "description": "Electric vehicle range in kilometers",
+      "examples": [580]
+    },
+    {
+      "name": "battery",
+      "type": "number",
+      "description": "Battery capacity in kWh for electric vehicles",
+      "examples": [75]
+    },
+    {
+      "name": "plate",
+      "type": "string",
+      "description": "License plate number",
+      "examples": ["AB-12-CD"]
+    },
+    {
+      "name": "vin",
+      "type": "string",
+      "description": "Vehicle Identification Number",
+      "examples": ["5YJ3E1EA4KF123456"]
+    }
+  ]
+}

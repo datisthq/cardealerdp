@@ -1,0 +1,99 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Showroom",
+  "description": "A schema describing a car dealer showroom",
+  "primaryKey": ["id"],
+  "fieldsMatch": "equal",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique identifier of the showroom",
+      "examples": ["showroom-downtown-123"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "The name of the showroom",
+      "examples": ["Downtown Auto Gallery"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "description": "Country where the showroom is located",
+      "examples": ["United States"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "region",
+      "type": "string",
+      "description": "State or region within the country",
+      "examples": ["California"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "city",
+      "type": "string",
+      "description": "Closest city where the showroom is located",
+      "examples": ["Los Angeles"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "description": "Street address of the showroom",
+      "examples": ["123 Main Street"],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "postcode",
+      "type": "string",
+      "description": "Postal code of the showroom location",
+      "examples": ["90210"]
+    },
+    {
+      "name": "phone",
+      "type": "string",
+      "description": "Contact phone number for the showroom",
+      "examples": ["+1-555-123-4567"]
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "description": "Contact email address for the showroom",
+      "examples": ["info@downtownauto.com"]
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "URL to the showroom",
+      "examples": ["https://www.downtownauto.com"]
+    },
+    {
+      "name": "lon",
+      "type": "number",
+      "description": "Longitude coordinate of the showroom location",
+      "examples": [-118.2437]
+    },
+    {
+      "name": "lat",
+      "type": "number",
+      "description": "Latitude coordinate of the showroom location",
+      "examples": [34.0522]
+    }
+  ]
+}

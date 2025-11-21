@@ -60,6 +60,11 @@ for (const file of await readdir("extension/schemas")) {
   `
 }
 
+$`rm -rf extension/public/extension/v${metadata.version}`
+$`mkdir -p extension/public/extension/v${metadata.version}`
+$`cp extension/profile.json extension/public/extension/v${metadata.version}`
+$`cp -r extension/schemas extension/public/extension/v${metadata.version}`
+
 loader.stop("Extension updated!")
 
 // TypeScript
