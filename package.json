@@ -23,7 +23,6 @@
     "format": "biome check --write",
     "install:ci": "pnpm install --ignore-scripts",
     "lint": "biome check",
-    "login:ci": "pnpm config set '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'",
     "prepare": "husky",
     "publish:py": "uv --directory sdk-py publish",
     "publish:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
