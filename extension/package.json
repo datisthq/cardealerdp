@@ -6,8 +6,8 @@
   "slug": "cardealerdp",
   "title": "Cardealer DP",
   "description": "Cardealer DP (Car Dealer Data Package) is a data exchange format that helps car dealerships share their car listings. It is developed on top of the Data Package standard",
-  "repository": "https://github.com/datisthq/cardealerdp",
-  "homepage": "https://datisthq.github.io/cardealerdp",
+  "repository": "https://github.com/frictionlessdata/cardealerdp",
+  "homepage": "https://frictionlessdata.github.io/cardealerdp",
   "author": "Evgeny Karev",
   "scripts": {
     "build": "astro build",

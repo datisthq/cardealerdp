@@ -11,8 +11,8 @@ classifiers = [ "Programming Language :: Python :: 3", "Programming Language :: 
 dependencies = [ "typing-extensions>=4.15" ]
 
 [project.urls]
-repository = "https://github.com/datisthq/cardealerdp"
-homepage = "https://datisthq.github.io/cardealerdp"
+repository = "https://github.com/frictionlessdata/cardealerdp"
+homepage = "https://frictionlessdata.github.io/cardealerdp"
 
 [[project.authors]]
 name = "Evgeny Karev"
