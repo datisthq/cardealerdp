@@ -13,6 +13,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@dpkit/core": "^0.15.0"
+    "frictionless-ts": "1.0.1"
   }
 }

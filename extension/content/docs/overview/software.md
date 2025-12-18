@@ -102,19 +102,19 @@ print(package)
 ## TypeScript
 
 > [!NOTE]
-> In addition to the TypeScript SDK, we recommend using [dpkit](https://dpkit.dev/) to manage your data packages. For example, using it you can publish your data pacakge directory to Zenodo instead of saving it locally, as well, as consumte it from a remote server.
+> In addition to the TypeScript SDK, we recommend using [frictionless-ts](https://github.com/frictionlessdata/frictionless-ts) to manage your data packages. For example, using it you can publish your data pacakge directory to Zenodo instead of saving it locally, as well, as consumte it from a remote server.
 
 ### Installation
 
 ```bash
-npm install cardealerdp dpkit
+npm install cardealerdp frictionless-ts
 ```
 
 ### Publication
 
 ```typescript
 import type { Car, Dealer, Package } from "cardealerdp";
-import { savePackageDescriptor } from "dpkit";
+import { savePackageDescriptor } from "frictionless-ts";
 
 const dealer: Dealer = {
 	title: "Premium Auto Sales",
@@ -179,7 +179,7 @@ await savePackageDescriptor(dataPackage, {
 ### Validation
 
 ```typescript
-import { validatePackage } from "dpkit";
+import { validatePackage } from "frictionless-ts";
 
 const { valid, errors } = await validatePackage("cardealer.json");
 console.log(valid, errors);
@@ -188,32 +188,8 @@ console.log(valid, errors);
 ### Consumption
 
 ```typescript
-import { loadPackageDescriptor } from "dpkit";
+import { loadPackageDescriptor } from "frictionless-ts";
 
 const dataPackage = await loadPackageDescriptor("cardealer.json");
 console.log(dataPackage);
-```
-
-## Command-Line
-
-> [!NOTE]
-> As an alternative to [dpkit](https://dpkit.dev/), you can use [frictionless-py](https://framework.frictionlessdata.io/) to manage your data packages in Command-Line.
-
-### Installation
-
-```bash
-curl -fsSL https://dpkit.dev/install.sh | sh
-```
-
-
-### Validation
-
-```bash
-./dp package validate cardealer.json
-```
-
-### Consumption
-
-```bash
-./dp table explore -p cardealer.json
 ```

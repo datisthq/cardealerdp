@@ -1,4 +1,4 @@
-import type * as standard from "@dpkit/core"
+import type * as standard from "frictionless-ts"
 import type * as extension from "./profile.ts"
 
 export type Resource = standard.Resource & extension.Resource
