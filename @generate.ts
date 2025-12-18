@@ -50,7 +50,7 @@ for (const file of await readdir("extension/schemas")) {
   const name = basename(file, extname(file))
 
   await $({ shell: true })`
-  dp schema convert
+  dpkit schema convert
   extension/schemas/${file}
   --to-path extension/content/docs/specification/data/${name}.md
   --to-format html
@@ -87,7 +87,7 @@ for (const file of await readdir("extension/schemas")) {
   typescriptIndex.push(`export * from "./${name}.ts"`)
 
   await $({ shell: true })`
-  dp schema convert
+  dpkit schema convert
   extension/schemas/${file}
   --to-format jsonschema
   | json2ts
@@ -138,7 +138,7 @@ for (const file of await readdir("extension/schemas")) {
   pythonIndex.push(`from .${name} import *`)
 
   await $({ shell: true })`
-  dp schema convert
+  dpkit schema convert
   extension/schemas/${file}
   --to-format jsonschema
   --silent
